@@ -1,0 +1,614 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-pill">Gestionale · VLT · AWP · Made in Italy</div>
+      <h1>Chiudi la cassa<br>in 5 minuti.<br>Ogni sera.</h1>
+      <p class="hero-sub">Il primo gestionale costruito per le sale giochi italiane. Scassettamenti, turni, firma versamenti digitale, notifiche push. Niente fogli Excel alle 23:00.</p>
+      <div class="hero-actions">
+        <a href="#demo" class="btn btn-primary">
+          Prova la demo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#prezzi" class="btn btn-ghost">Vedi i piani</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="mock">
+        <div class="mock-chrome">
+          <div class="mock-dots"><span></span><span></span><span></span></div>
+          <div class="mock-url">app.gesthallsuite.it</div>
+          <div style="width:48px"></div>
+        </div>
+        <div class="mock-app">
+          <div class="mock-sb">
+            <div class="mock-sb-logo">
+              <svg width="20" height="20" viewBox="0 0 20 20"><rect width="20" height="20" rx="5" fill="oklch(0.72 0.16 168)"/><rect x="3" y="3" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="12" y="3" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="3" y="11" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="12" y="11" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.7)"/></svg>
+            </div>
+            <div class="mock-sb-items">
+              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg></div>
+              <div class="mock-sb-item active"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="12" height="10" rx="1.5"/><path d="M9 1v3M5 1v3M1 6h12"/></svg></div>
+              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="12" height="10" rx="1.5"/><path d="M9 1v3M5 1v3M1 6h12M4 9h1M6.5 9h1M9 9h1"/></svg></div>
+              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5a4 4 0 0 1 0 4v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a4 4 0 0 1 0-4V3a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/></svg></div>
+            </div>
+            <div class="mock-sb-foot">
+              <div class="mock-sb-avatar">MN</div>
+            </div>
+          </div>
+          <div class="mock-main">
+            <div class="mock-hdr">
+              <span class="mock-hdr-date">Lun 7 luglio 2026</span>
+              <span class="mock-hdr-badge">Aperta</span>
+            </div>
+            <div class="mock-kpis">
+              <div class="mock-kpi"><div class="mock-kpi-label">Versamento</div><div class="mock-kpi-val">€&nbsp;7.820</div></div>
+              <div class="mock-kpi"><div class="mock-kpi-label">Scassettamenti</div><div class="mock-kpi-val">€&nbsp;12.460</div></div>
+            </div>
+            <div class="mock-tabs">
+              <span class="mock-tab">Turno 1</span>
+              <span class="mock-tab on"><span class="mock-tab-dot"></span>Turno 2</span>
+            </div>
+            <div class="mock-rows">
+              <div class="mock-row"><span class="mock-rl">Fondo cassa</span><span class="mock-rv">€ 300</span></div>
+              <div class="mock-row"><span class="mock-rl">Scassettamenti</span><span class="mock-rv">€ 8.460</span></div>
+              <div class="mock-row"><span class="mock-rl">Bancomat</span><span class="mock-rv">€ 420</span></div>
+              <div class="mock-row"><span class="mock-rl">Ticket pagati</span><span class="mock-rv">€ 220</span></div>
+            </div>
+            <div class="mock-result">
+              <span class="mock-rl-acc">Versamento netto</span>
+              <span class="mock-rv-acc">€ 7.820</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ──────────────────────────────────────────── -->
+<div class="trust-strip">
+  <div class="container">
+    <ul class="trust-items" role="list">
+      <li>VLT &amp; AWP</li>
+      <li>SNAI · Betwin</li>
+      <li>Firma digitale ADM</li>
+      <li>PWA iOS &amp; Android</li>
+      <li>Notifiche push</li>
+      <li>Supporto in italiano</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── FEATURES BENTO ──────────────────────────────────────── -->
+<section class="section feat-section" id="funzionalita">
+  <div class="container">
+    <div class="sect-header reveal">
+      <h2>Tutto quello che serve.<br>Niente di più.</h2>
+      <p>Pensato per chi deve chiudere i conti ogni sera, non per imparare un software.</p>
+    </div>
+    <div class="feat-bento">
+
+      <div class="feat-cell feat-big reveal">
+        <div class="feat-cell-body">
+          <div class="feat-num">01</div>
+          <h3>Cassa giornaliera</h3>
+          <p>Inserisci contanti, bancomat, ticket e scassettamenti macchina per macchina. Il calcolo del cassetto e del versamento avviene in tempo reale, turno per turno.</p>
+        </div>
+        <div class="feat-cell-visual" aria-hidden="true">
+          <div class="mini-form">
+            <div class="mini-form-row"><span>Fondo cassa</span><span>€ 300</span></div>
+            <div class="mini-form-row"><span>Scassett. totali</span><span>€ 12.460</span></div>
+            <div class="mini-form-row"><span>Bancomat</span><span>€ 420</span></div>
+            <div class="mini-form-row"><span>Ticket pagati</span><span>€ 220</span></div>
+            <div class="mini-form-result"><span>Versamento</span><strong>€ 11.820</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-cell feat-sm reveal d1">
+        <div class="feat-num">02</div>
+        <h3>Firma digitale</h3>
+        <p>Il revisore firma il versamento su tablet con la propria firma manuale. Ogni ritiro è registrato con firma PNG, IP, timestamp.</p>
+        <div class="feat-firma-preview" aria-hidden="true">
+          <div class="firma-box">
+            <svg viewBox="0 0 120 50" width="120" height="50">
+              <path d="M10 35 C20 10, 35 45, 50 30 C60 20, 70 40, 80 25 C90 15, 100 35, 112 28" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="firma-meta">Confermato · 22:14 · IP 10.0.0.5</div>
+        </div>
+      </div>
+
+      <div class="feat-cell feat-sm reveal d2">
+        <div class="feat-num">03</div>
+        <h3>App mobile</h3>
+        <p>Installa come PWA su iPhone e Android. Aggiorna i turni dal telefono, ricevi notifiche push per nuovi ticket o versamenti confermati.</p>
+        <div class="feat-mobile-preview" aria-hidden="true">
+          <div class="phone-notif">
+            <div class="notif-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1a4 4 0 0 0-4 4c0 4.5-2 5.5-2 5.5h12s-2-1-2-5.5a4 4 0 0 0-4-4z"/><path d="M9.7 14a1.9 1.9 0 0 1-3.4 0"/></svg>
+            </div>
+            <div>
+              <div class="notif-title">GestHall Suite</div>
+              <div class="notif-body">Versamento confermato · €7.820</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-cell feat-big reveal d1">
+        <div class="feat-cell-body">
+          <div class="feat-num">04</div>
+          <h3>White-label</h3>
+          <p>Logo, colori e nome personalizzati per ogni cliente. Il gestore vede il tuo brand, non il nostro. Ideale per rivenditori e installatori.</p>
+        </div>
+        <div class="feat-cell-visual" aria-hidden="true">
+          <div class="wl-preview">
+            <div class="wl-swatch" style="background: #2563eb"></div>
+            <div class="wl-swatch" style="background: #16a34a"></div>
+            <div class="wl-swatch" style="background: #9333ea"></div>
+            <div class="wl-swatch active" style="background: oklch(0.72 0.16 168)"></div>
+            <div class="wl-swatch" style="background: #dc2626"></div>
+          </div>
+          <div class="wl-bar">
+            <div class="wl-bar-accent"></div>
+            <span>Sala Fortuna · Cassa giornaliera</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES DEEP ────────────────────────────────────────── -->
+<section class="section feat-rows-section">
+  <div class="container">
+
+    <div class="feat-row reveal">
+      <div class="feat-row-text">
+        <h2>Macchina per macchina,<br>senza errori.</h2>
+        <p>Registra ogni scassettamento con importo, macchina e orario. Il riepilogo mensile e il confronto settimanale Bet/Win sono sempre a portata di mano — incluso l'import XLS da portale SNAI.</p>
+        <ul class="feat-checklist">
+          <li>Storico lifetime per ogni VLT e AWP</li>
+          <li>Grafico mensile con overlay refill</li>
+          <li>Import automatico SNAI e Betwin da XLS</li>
+          <li>Ticket assistenza collegato alla macchina</li>
+        </ul>
+      </div>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="screen-mock">
+          <div class="sm-header">Macchine · Scassettamenti</div>
+          <div class="sm-table">
+            <div class="sm-row sm-row-head"><span>Macchina</span><span>Oggi</span><span>Mese</span></div>
+            <div class="sm-row"><span>VLT 01 · SNAI</span><span>€ 3.240</span><span>€ 41.200</span></div>
+            <div class="sm-row"><span>VLT 02 · SNAI</span><span>€ 2.890</span><span>€ 38.700</span></div>
+            <div class="sm-row"><span>AWP 01 · Betwin</span><span>€ 1.640</span><span>€ 21.400</span></div>
+            <div class="sm-row"><span>AWP 02 · Betwin</span><span>€ 980</span><span>€ 14.100</span></div>
+          </div>
+          <div class="sm-total">Totale giornata: <strong>€ 8.750</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row feat-row-rev reveal">
+      <div class="feat-row-text">
+        <h2>Turni, operatori<br>e passaggi di consegne.</h2>
+        <p>Ogni turno ha il suo operatore, il suo cassetto, le sue note. Il calendario turni è visibile a tutti; il passaggio di consegne è strutturato con checklist configurabile e messaggi liberi.</p>
+        <ul class="feat-checklist">
+          <li>Turno mattino e sera separati</li>
+          <li>Autoassegnazione o gestione dal responsabile</li>
+          <li>Passaggio consegne con checklist</li>
+          <li>Audit log completo di ogni operazione</li>
+        </ul>
+      </div>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="screen-mock">
+          <div class="sm-header">Calendario Turni · Luglio 2026</div>
+          <div class="sm-cal">
+            <div class="sm-cal-day"><span class="sm-cal-d">Lun 7</span><span class="sm-cal-op op-a">Marco R.</span><span class="sm-cal-op op-b">Silvia M.</span></div>
+            <div class="sm-cal-day"><span class="sm-cal-d">Mar 8</span><span class="sm-cal-op op-a">Marco R.</span><span class="sm-cal-op sm-empty">—</span></div>
+            <div class="sm-cal-day"><span class="sm-cal-d">Mer 9</span><span class="sm-cal-op op-c">Luigi F.</span><span class="sm-cal-op op-b">Silvia M.</span></div>
+            <div class="sm-cal-day"><span class="sm-cal-d">Gio 10</span><span class="sm-cal-op op-c">Luigi F.</span><span class="sm-cal-op op-a">Marco R.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row reveal">
+      <div class="feat-row-text">
+        <h2>Ogni versamento<br>tracciato e firmato.</h2>
+        <p>Il revisore conferma il ritiro del versamento con firma digitale manuale su qualsiasi dispositivo. Data, ora, IP e firma PNG vengono salvati immutabilmente. Nessun rischio di contestazioni.</p>
+        <ul class="feat-checklist">
+          <li>Email automatica ai revisori alla chiusura</li>
+          <li>Firma a mano su canvas touch</li>
+          <li>Storico con badge "Confermato" in verde</li>
+          <li>Accesso revisore in sola lettura</li>
+        </ul>
+      </div>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="screen-mock">
+          <div class="sm-header">Conferma versamento</div>
+          <div class="firma-dialog">
+            <div class="firma-info">
+              <span>Giornata</span><strong>7 luglio 2026</strong>
+              <span>Importo</span><strong class="firma-amount">€ 7.820,00</strong>
+            </div>
+            <div class="firma-canvas-wrap">
+              <svg viewBox="0 0 200 70" width="200" height="70">
+                <path d="M15 50 C30 15, 55 60, 75 40 C90 25, 105 55, 125 35 C140 20, 158 50, 185 38" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="firma-canvas-label">Firma del revisore</div>
+            </div>
+            <div class="firma-confirm-btn">Conferma ritiro</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PRICING ──────────────────────────────────────────────── -->
+<section class="section pricing-section" id="prezzi">
+  <div class="container">
+    <div class="sect-header reveal">
+      <h2>Prezzi chiari.<br>Nessuna sorpresa.</h2>
+      <p>Abbonamento mensile o annuale. Annulla quando vuoi. Migrazione dati inclusa.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="plan reveal">
+        <div class="plan-name">Essenziale</div>
+        <div class="plan-price"><span class="plan-eur">€</span>39<span class="plan-mo">/mese</span></div>
+        <div class="plan-annual">o €390/anno · risparmi 2 mesi</div>
+        <a href="/contatti" class="btn btn-ghost plan-btn">Inizia gratis</a>
+        <ul class="plan-features">
+          <li>Cassa giornaliera e turni</li>
+          <li>VLT e AWP illimitati</li>
+          <li>Fino a 4 operatori</li>
+          <li>Report settimanale e mensile</li>
+          <li>PWA mobile (iOS e Android)</li>
+          <li>Export dati XLS</li>
+          <li>Supporto via email</li>
+        </ul>
+      </div>
+
+      <div class="plan plan-featured reveal d1">
+        <div class="plan-badge">Più scelto</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><span class="plan-eur">€</span>69<span class="plan-mo">/mese</span></div>
+        <div class="plan-annual">o €690/anno · risparmi 2 mesi</div>
+        <a href="/contatti" class="btn btn-primary plan-btn">Inizia gratis</a>
+        <ul class="plan-features">
+          <li>Tutto di Essenziale</li>
+          <li>Operatori illimitati</li>
+          <li>Anagrafica giocatori</li>
+          <li>Prestiti e rientri</li>
+          <li>Documenti e archivi</li>
+          <li>Ticket assistenza macchine</li>
+          <li>Notifiche push iOS e Android</li>
+          <li>Firma digitale versamenti</li>
+          <li>Confronto periodi avanzato</li>
+        </ul>
+      </div>
+
+      <div class="plan reveal d2">
+        <div class="plan-name">Suite</div>
+        <div class="plan-price"><span class="plan-eur">€</span>99<span class="plan-mo">/mese</span></div>
+        <div class="plan-annual">o €990/anno · risparmi 2 mesi</div>
+        <a href="/contatti" class="btn btn-ghost plan-btn">Inizia gratis</a>
+        <ul class="plan-features">
+          <li>Tutto di Pro</li>
+          <li>White-label (logo e colori)</li>
+          <li>Passaggio consegne con checklist</li>
+          <li>Integrazione SONOS</li>
+          <li>Supporto prioritario</li>
+          <li>Istanza demo per rivenditori</li>
+          <li>Onboarding dedicato</li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="pricing-note reveal">Tutti i piani includono installazione su hosting proprio, aggiornamenti, e 14 giorni di prova gratuita senza carta di credito.</p>
+  </div>
+</section>
+
+<!-- ── RESELLERS ────────────────────────────────────────────── -->
+<section class="section resellers-section" id="rivenditori">
+  <div class="container">
+    <div class="resellers-inner reveal">
+      <div class="resellers-text">
+        <div class="resellers-tag">Per rivenditori</div>
+        <h2>Installi software per le sale?<br>GestHall Suite è fatto per te.</h2>
+        <p>White-label completo, setup in meno di un'ora su qualsiasi hosting PHP, pannello di gestione multi-installazione. Il tuo brand sul prodotto, il tuo margine su ogni abbonamento.</p>
+        <ul class="feat-checklist">
+          <li>Logo e colori del tuo cliente su ogni installazione</li>
+          <li>Demo instance preconfigurata per presentazioni</li>
+          <li>Documentazione tecnica e guide di installazione</li>
+          <li>Supporto prioritario per i rivenditori certificati</li>
+        </ul>
+        <a href="/contatti" class="btn btn-primary" style="margin-top: 32px">Parla con noi →</a>
+      </div>
+      <div class="resellers-visual" aria-hidden="true">
+        <div class="resellers-mockup">
+          <div class="rm-header">Dashboard rivenditore</div>
+          <div class="rm-installs">
+            <div class="rm-install">
+              <div class="rm-dot rm-dot-green"></div>
+              <div><div class="rm-name">Sala Fortuna — Napoli</div><div class="rm-sub">Piano Pro · Attivo</div></div>
+              <div class="rm-plan">Pro</div>
+            </div>
+            <div class="rm-install">
+              <div class="rm-dot rm-dot-green"></div>
+              <div><div class="rm-name">New Game — Torino</div><div class="rm-sub">Piano Suite · Attivo</div></div>
+              <div class="rm-plan rm-plan-suite">Suite</div>
+            </div>
+            <div class="rm-install">
+              <div class="rm-dot rm-dot-amber"></div>
+              <div><div class="rm-name">Lucky Star — Roma</div><div class="rm-sub">Piano Essenziale · Trial</div></div>
+              <div class="rm-plan rm-plan-ess">Ess.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DEMO CTA ─────────────────────────────────────────────── -->
+<section class="section demo-section" id="demo">
+  <div class="container">
+    <div class="demo-inner reveal">
+      <h2>Prova GestHall Suite<br>senza impegno.</h2>
+      <p>14 giorni gratuiti, nessuna carta di credito. Installazione su hosting inclusa nel primo mese.</p>
+      <form class="demo-form" id="demo-form" novalidate>
+        <input type="email" name="email" placeholder="La tua email" required autocomplete="email" />
+        <button type="submit" class="btn btn-primary">Inizia la prova →</button>
+      </form>
+      <p class="demo-note" id="demo-note">Oppure scrivici a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a></p>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.hero { padding: 120px 0 80px; min-height: 100dvh; display: flex; align-items: center }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center }
+.hero-text { display: flex; flex-direction: column; gap: 24px }
+.hero-pill {
+  display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px;
+  background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.25);
+  color: var(--accent); font-size: 13px; font-weight: 600; width: fit-content;
+  animation: fadeUp 0.7s var(--ease) 0s both;
+}
+.hero-text h1 {
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem); font-weight: 800; color: var(--text);
+  animation: fadeUp 0.8s var(--ease) 0.08s both;
+}
+.hero-sub {
+  font-size: 17px; color: var(--muted); max-width: 48ch; line-height: 1.7;
+  animation: fadeUp 0.8s var(--ease) 0.17s both;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; animation: fadeUp 0.8s var(--ease) 0.26s both }
+.hero-visual { animation: fadeIn 1s var(--ease) 0.12s both }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+
+.mock {
+  background: #0b0f18; border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 28px 72px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.03);
+}
+.mock-chrome { background: #131926; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1a2231 }
+.mock-dots { display: flex; gap: 5px }
+.mock-dots span { width: 9px; height: 9px; border-radius: 50%; background: #1e2840 }
+.mock-url { flex: 1; text-align: center; font-size: 11px; color: #3a4a63; font-family: var(--font-body) }
+.mock-app { display: flex; height: 290px }
+.mock-sb { width: 52px; background: #080c14; border-right: 1px solid #141d2e; display: flex; flex-direction: column; align-items: center; padding: 12px 0 10px; gap: 4px }
+.mock-sb-logo { width: 28px; height: 28px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center }
+.mock-sb-items { display: flex; flex-direction: column; gap: 2px }
+.mock-sb-item { width: 34px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #2e3f5c }
+.mock-sb-item svg { width: 14px; height: 14px }
+.mock-sb-item.active { background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
+.mock-sb-foot { margin-top: auto }
+.mock-sb-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #2e3f5c, #1a2535); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #8899bb }
+.mock-main { flex: 1; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 10px }
+.mock-hdr { display: flex; align-items: center; gap: 8px }
+.mock-hdr-date { font-size: 12px; font-weight: 600; color: #c8d4e8 }
+.mock-hdr-badge { font-size: 9px; padding: 2px 7px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.13); color: oklch(0.72 0.16 168); font-weight: 700 }
+.mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 7px }
+.mock-kpi { background: #131b2a; border-radius: 7px; padding: 8px 10px }
+.mock-kpi-label { font-size: 9px; color: #3a4a63; font-weight: 500; margin-bottom: 2px }
+.mock-kpi-val { font-size: 19px; font-weight: 700; color: #dce8f5; font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.mock-tabs { display: flex; gap: 5px }
+.mock-tab { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 6px; color: #3a4a63 }
+.mock-tab.on { background: oklch(0.72 0.16 168 / 0.11); color: oklch(0.72 0.16 168); display: flex; align-items: center; gap: 4px }
+.mock-tab-dot { width: 5px; height: 5px; border-radius: 50%; background: oklch(0.72 0.16 168); flex-shrink: 0 }
+.mock-rows { display: flex; flex-direction: column; gap: 5px }
+.mock-row { display: flex; justify-content: space-between; font-size: 11px }
+.mock-rl { color: #3a4a63 }
+.mock-rv { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
+.mock-result { margin-top: 4px; padding: 7px 10px; border-radius: 7px; background: oklch(0.72 0.16 168 / 0.11); border: 1px solid oklch(0.72 0.16 168 / 0.22); display: flex; justify-content: space-between; align-items: center }
+.mock-rl-acc { font-size: 10px; font-weight: 700; color: oklch(0.72 0.16 168) }
+.mock-rv-acc { font-size: 16px; font-weight: 800; color: oklch(0.72 0.16 168); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+
+.trust-strip { border-top: 1px solid var(--border-sub); border-bottom: 1px solid var(--border-sub); padding: 16px 0; background: var(--surface) }
+.trust-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px }
+.trust-items li { font-size: 12px; font-weight: 600; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase }
+
+.section { padding: 96px 0 }
+.sect-header { margin-bottom: 56px }
+.sect-header h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; margin-bottom: 16px }
+.sect-header p { font-size: 17px; color: var(--muted); max-width: 50ch }
+
+.feat-bento { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 14px }
+.feat-cell:nth-child(1) { grid-column: 1; grid-row: 1 }
+.feat-cell:nth-child(2) { grid-column: 2; grid-row: 1 }
+.feat-cell:nth-child(3) { grid-column: 1; grid-row: 2 }
+.feat-cell:nth-child(4) { grid-column: 2; grid-row: 2 }
+.feat-cell { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 28px; display: flex; flex-direction: column; gap: 16px; overflow: hidden }
+.feat-big { flex-direction: row; align-items: flex-start; gap: 32px }
+.feat-cell-body { flex: 1; min-width: 0 }
+.feat-cell-visual { flex-shrink: 0 }
+.feat-num { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 8px }
+.feat-cell h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text) }
+.feat-cell p { font-size: 14px; color: var(--muted); line-height: 1.65 }
+
+.mini-form { background: #0d1119; border-radius: 10px; padding: 14px 16px; border: 1px solid #1a2231; min-width: 200px }
+.mini-form-row { display: flex; justify-content: space-between; font-size: 11px; padding: 5px 0; border-bottom: 1px solid #141d2e; color: #4a5568 }
+.mini-form-row span:last-child { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
+.mini-form-result { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 0; font-size: 11px; color: oklch(0.72 0.16 168) }
+.mini-form-result strong { font-size: 18px; font-family: var(--font-head); font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.feat-firma-preview { margin-top: 4px }
+.firma-box { background: #0d1119; border-radius: 8px; padding: 10px 12px; border: 1px solid #1a2231; display: inline-block }
+.firma-meta { font-size: 10px; color: var(--faint); margin-top: 6px; font-variant-numeric: tabular-nums }
+.phone-notif { display: flex; align-items: center; gap: 10px; background: #0d1119; border-radius: 12px; padding: 10px 14px; border: 1px solid #1a2231; margin-top: 4px }
+.notif-icon { width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0; background: oklch(0.72 0.16 168 / 0.15); color: oklch(0.72 0.16 168); display: flex; align-items: center; justify-content: center }
+.notif-icon svg { width: 16px; height: 16px }
+.notif-title { font-size: 11px; font-weight: 700; color: #c8d4e8; margin-bottom: 2px }
+.notif-body { font-size: 10px; color: #4a5568 }
+.wl-preview { display: flex; gap: 8px; align-items: center; padding: 4px 0 }
+.wl-swatch { width: 26px; height: 26px; border-radius: 6px; border: 2px solid transparent; transition: transform 0.15s }
+.wl-swatch.active { border-color: var(--text); transform: scale(1.15) }
+.wl-bar { display: flex; align-items: center; gap: 8px; margin-top: 12px; background: #0d1119; border-radius: 8px; padding: 8px 12px; border: 1px solid #1a2231; font-size: 11px; color: #4a5568 }
+.wl-bar-accent { width: 3px; height: 18px; border-radius: 2px; background: oklch(0.72 0.16 168); flex-shrink: 0 }
+
+.feat-rows-section { padding: 80px 0 }
+.feat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 64px 0; border-top: 1px solid var(--border-sub) }
+.feat-row:first-child { border-top: none }
+.feat-row-rev .feat-row-text { order: 2 }
+.feat-row-rev .feat-row-visual { order: 1 }
+.feat-row-text h2 { font-size: clamp(1.7rem, 2.5vw, 2.4rem); margin-bottom: 16px }
+.feat-row-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
+.feat-checklist { display: flex; flex-direction: column; gap: 8px }
+.feat-checklist li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted) }
+.feat-checklist li::before {
+  content: ''; width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%;
+  background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.3);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='oklch(0.72 0.16 168)' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 5l2 2 4-4'/%3E%3C/svg%3E");
+  background-size: 10px; background-position: center; background-repeat: no-repeat;
+}
+
+.screen-mock { background: #0b0f18; border-radius: 12px; border: 1px solid #1a2231; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5) }
+.sm-header { background: #131926; padding: 10px 16px; font-size: 11px; font-weight: 600; color: #4a5568; border-bottom: 1px solid #1a2231 }
+.sm-table { padding: 12px 16px; display: flex; flex-direction: column; gap: 2px }
+.sm-row { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; padding: 7px 0; font-size: 12px; border-bottom: 1px solid #141d2e }
+.sm-row:last-child { border-bottom: none }
+.sm-row-head { font-size: 10px; font-weight: 700; color: #2e3f5c }
+.sm-row span:first-child { color: #8899bb }
+.sm-row span:not(:first-child) { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
+.sm-total { padding: 10px 16px; font-size: 13px; color: oklch(0.72 0.16 168); background: oklch(0.72 0.16 168 / 0.06); font-weight: 600; font-variant-numeric: tabular-nums }
+.sm-total strong { font-weight: 800 }
+.sm-cal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 16px }
+.sm-cal-day { display: flex; flex-direction: column; gap: 4px }
+.sm-cal-d { font-size: 9px; font-weight: 700; color: #3a4a63; margin-bottom: 2px }
+.sm-cal-op { font-size: 10px; padding: 4px 6px; border-radius: 5px; font-weight: 600; font-variant-numeric: tabular-nums }
+.op-a { background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
+.op-b { background: oklch(0.72 0.16 210 / 0.12); color: oklch(0.72 0.16 210) }
+.op-c { background: oklch(0.72 0.16 60  / 0.12); color: oklch(0.72 0.16 60) }
+.sm-empty { background: #141d2e; color: #2e3f5c }
+.firma-dialog { padding: 16px }
+.firma-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin-bottom: 14px; font-size: 12px; color: #4a5568; align-items: baseline }
+.firma-info strong { color: #c8d4e8; font-weight: 600 }
+.firma-amount { font-size: 18px; font-weight: 800; color: oklch(0.72 0.16 168); font-family: var(--font-head); font-variant-numeric: tabular-nums }
+.firma-canvas-wrap { background: #131926; border-radius: 8px; padding: 14px; border: 1px dashed #1a2231; margin-bottom: 12px; text-align: center }
+.firma-canvas-label { font-size: 9px; color: #2e3f5c; margin-top: 4px }
+.firma-confirm-btn { background: oklch(0.72 0.16 168); color: #0a0f18; font-size: 12px; font-weight: 700; padding: 8px 18px; border-radius: 7px; text-align: center; display: inline-block }
+
+.pricing-section { background: var(--surface) }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px }
+.plan { background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; position: relative }
+.plan-featured { border-color: oklch(0.72 0.16 168 / 0.5); background: oklch(0.14 0.02 200); box-shadow: 0 0 0 1px oklch(0.72 0.16 168 / 0.2), 0 12px 40px oklch(0.72 0.16 168 / 0.1) }
+.plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(0.1 0 0); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 999px; white-space: nowrap }
+.plan-name { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px }
+.plan-price { display: flex; align-items: baseline; gap: 2px; font-family: var(--font-head); font-weight: 800; color: var(--text); font-size: 52px; letter-spacing: -0.04em; line-height: 1 }
+.plan-eur { font-size: 22px; font-weight: 600; color: var(--muted) }
+.plan-mo  { font-size: 16px; font-weight: 500; color: var(--muted); margin-bottom: 6px }
+.plan-annual { font-size: 12px; color: var(--faint); margin-bottom: 20px }
+.plan-btn { width: 100%; justify-content: center; margin-bottom: 20px }
+.plan-features { display: flex; flex-direction: column; gap: 10px }
+.plan-features li { font-size: 14px; color: var(--muted); padding-left: 22px; position: relative }
+.plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 13px }
+.plan-featured .plan-features li { color: oklch(0.78 0.01 255) }
+.pricing-note { font-size: 14px; color: var(--faint); text-align: center }
+
+.resellers-section { background: var(--bg) }
+.resellers-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center }
+.resellers-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 16px }
+.resellers-text h2 { font-size: clamp(1.7rem, 2.4vw, 2.4rem); margin-bottom: 16px }
+.resellers-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
+.resellers-mockup { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); overflow: hidden }
+.rm-header { background: #131926; padding: 12px 18px; font-size: 12px; font-weight: 600; color: #4a5568; border-bottom: 1px solid var(--border-sub) }
+.rm-installs { padding: 8px 0 }
+.rm-install { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border-sub) }
+.rm-install:last-child { border-bottom: none }
+.rm-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0 }
+.rm-dot-green { background: #34d399 }
+.rm-dot-amber { background: #fbbf24 }
+.rm-name { font-size: 13px; font-weight: 600; color: var(--text) }
+.rm-sub  { font-size: 11px; color: var(--faint) }
+.rm-plan { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
+.rm-plan-suite { background: oklch(0.72 0.16 300 / 0.12); color: oklch(0.72 0.16 300) }
+.rm-plan-ess   { background: var(--surface-2); color: var(--muted) }
+
+.demo-section { background: var(--surface) }
+.demo-inner { max-width: 560px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px }
+.demo-inner h2 { font-size: clamp(1.9rem, 3vw, 2.8rem) }
+.demo-inner > p { font-size: 16px; color: var(--muted) }
+.demo-form { display: flex; gap: 10px; width: 100% }
+.demo-form input { flex: 1; padding: 13px 18px; border-radius: var(--rx-m); background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 15px; outline: none; transition: border-color 0.15s }
+.demo-form input:focus { border-color: oklch(0.72 0.16 168 / 0.6) }
+.demo-form input::placeholder { color: var(--faint) }
+.demo-note { font-size: 13px; color: var(--faint) }
+.demo-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
+
+@media (max-width: 1024px) { .feat-row-visual .screen-mock { font-size: 10px } }
+@media (max-width: 900px) {
+  .hero { padding: 96px 0 48px; min-height: auto }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px }
+  .hero-visual { max-width: 520px; margin: 0 auto }
+  .feat-bento { grid-template-columns: 1fr }
+  .feat-cell:nth-child(n) { grid-column: 1 }
+  .feat-big { flex-direction: column }
+  .feat-row { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 }
+  .feat-row-rev .feat-row-text, .feat-row-rev .feat-row-visual { order: 0 }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 32px }
+  .resellers-inner { grid-template-columns: 1fr; gap: 48px }
+}
+@media (max-width: 640px) {
+  .hero-text h1 { font-size: 2.4rem }
+  .hero-sub { font-size: 15px }
+  .hero-visual { display: none }
+  .demo-form { flex-direction: column }
+}
+</style>
+
+<script>
+  document.getElementById('demo-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form  = e.target as HTMLFormElement;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const btn   = form.querySelector('button') as HTMLButtonElement;
+    const note  = document.getElementById('demo-note');
+    btn.textContent = '✓ Ricevuto!';
+    btn.disabled = true;
+    if (note) note.textContent = `Ti contatteremo presto a ${email}.`;
+    setTimeout(() => {
+      btn.textContent = 'Inizia la prova →';
+      btn.disabled = false;
+      if (note) note.innerHTML = 'Oppure scrivici a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>';
+    }, 5000);
+  });
+</script>

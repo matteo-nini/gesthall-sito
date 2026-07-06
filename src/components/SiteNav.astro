@@ -1,0 +1,88 @@
+---
+---
+<header class="snav" id="snav">
+  <div class="container snav-inner">
+    <a href="/" class="slogo" aria-label="GestHall Suite">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="8" fill="oklch(0.72 0.16 168)"/>
+        <rect x="6"  y="6"  width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
+        <rect x="19" y="6"  width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
+        <rect x="6"  y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
+        <rect x="19" y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.72)"/>
+      </svg>
+      <span class="slogo-name">GestHall <strong>Suite</strong></span>
+    </a>
+    <nav class="snav-links" id="snav-links" aria-label="Navigazione principale">
+      <a href="/#funzionalita">Funzionalità</a>
+      <a href="/#prezzi">Prezzi</a>
+      <a href="/#rivenditori">Rivenditori</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+    <a href="/#demo" class="btn btn-primary snav-cta">Inizia ora</a>
+    <button class="snav-toggle" id="snav-toggle" aria-label="Apri menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="2" y1="5.5"  x2="20" y2="5.5"/>
+        <line x1="2" y1="11"   x2="20" y2="11"/>
+        <line x1="2" y1="16.5" x2="20" y2="16.5"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+.snav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+.snav.scrolled {
+  background: oklch(0.12 0.012 255 / 0.88);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid oklch(0.22 0.01 255);
+}
+.snav-inner { display: flex; align-items: center; gap: 24px; height: 72px }
+.slogo { display: flex; align-items: center; gap: 10px; flex-shrink: 0 }
+.slogo-name {
+  font-family: var(--font-head); font-size: 18px; font-weight: 300;
+  letter-spacing: -0.03em; color: var(--text);
+}
+.slogo-name strong { font-weight: 700 }
+.snav-links { display: flex; gap: 32px; margin-left: 16px }
+.snav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color 0.15s }
+.snav-links a:hover { color: var(--text) }
+.snav-cta { margin-left: auto }
+.snav-toggle { display: none; color: var(--text); padding: 4px }
+
+@media (max-width: 640px) {
+  .snav-links { display: none }
+  .snav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 72px; left: 0; right: 0;
+    background: oklch(0.12 0.012 255 / 0.97);
+    backdrop-filter: blur(20px);
+    padding: 24px; gap: 16px;
+    border-bottom: 1px solid var(--border-sub);
+    z-index: 99;
+  }
+  .snav-links.open a { font-size: 17px; color: var(--text) }
+  .snav-cta { display: none }
+  .snav-toggle { display: flex }
+}
+</style>
+
+<script>
+  const nav = document.getElementById('snav');
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const toggle = document.getElementById('snav-toggle');
+  const links  = document.getElementById('snav-links');
+  toggle?.addEventListener('click', () => {
+    const open = links?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => links.classList.remove('open'))
+  );
+</script>
