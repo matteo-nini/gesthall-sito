@@ -170,11 +170,11 @@ import Layout from '../layouts/Layout.astro';
         <div class="feat-suite-half">
           <div class="feat-suite-label">Suite</div>
           <h3>Chat interna</h3>
-          <p>Messaggistica in tempo reale tra tutti gli operatori della sala. Gruppi, messaggi diretti e indicatore "sta scrivendo".</p>
+          <p>Messaggistica in tempo reale tra tutti gli operatori. Testo, emoji, immagini e messaggi vocali. Gruppi, messaggi diretti e indicatore "sta scrivendo".</p>
           <div class="chat-preview" aria-hidden="true">
             <div class="chat-bubble chat-in">Hai chiuso il turno serale?</div>
             <div class="chat-bubble chat-out">Sì, versamento fatto ✓</div>
-            <div class="chat-typing"><span></span><span></span><span></span></div>
+            <div class="chat-bubble chat-in chat-voice">🎤 <span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-time">0:12</span></div>
           </div>
         </div>
         <div class="feat-suite-divider" aria-hidden="true"></div>
@@ -539,6 +539,15 @@ import Layout from '../layouts/Layout.astro';
 .chat-typing span:nth-child(3) { animation-delay: .36s }
 @keyframes ct-pulse { 0%,100% { transform: scaleY(0.5); opacity: .4 } 50% { transform: scaleY(1); opacity: 1 } }
 @media (prefers-reduced-motion: reduce) { .chat-typing span { animation: none; opacity: .6 } }
+.chat-voice { display: flex; align-items: center; gap: 5px }
+.chat-voice-bar { display: inline-block; width: 3px; border-radius: 2px; background: oklch(0.55 0.04 240 / 0.7); animation: cv-bar 1.2s ease-in-out infinite }
+.chat-voice-bar:nth-child(2) { height: 10px; animation-delay: 0s }
+.chat-voice-bar:nth-child(3) { height: 16px; animation-delay: .15s }
+.chat-voice-bar:nth-child(4) { height: 8px; animation-delay: .3s }
+.chat-voice-bar:nth-child(5) { height: 13px; animation-delay: .1s }
+@keyframes cv-bar { 0%,100%{transform:scaleY(0.4);opacity:.5} 50%{transform:scaleY(1);opacity:1} }
+.chat-voice-time { font-size: 10px; color: oklch(0.55 0.04 240 / 0.7); margin-left: 2px }
+@media (prefers-reduced-motion: reduce) { .chat-voice-bar { animation: none; opacity: .6 } }
 
 /* Radio preview */
 .radio-preview { display: flex; flex-direction: column; gap: 12px; margin-top: 4px }
