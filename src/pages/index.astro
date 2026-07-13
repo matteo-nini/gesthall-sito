@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { features, byPlan } from '../data/features.ts';
 ---
 
 <Layout>
@@ -88,205 +89,175 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
-<!-- ── FEATURES BENTO ──────────────────────────────────────── -->
+<!-- ── 3 FEATURE HIGHLIGHTS ─────────────────────────────────── -->
 <section class="section feat-section" id="funzionalita">
   <div class="container">
     <div class="sect-header reveal">
-      <h2>Tutto quello che serve.<br>Niente di più.</h2>
-      <p>Pensato per chi deve chiudere i conti ogni sera, non per imparare un software.</p>
+      <h2>Costruito per chi chiude<br>i conti ogni sera.</h2>
+      <p>Non un gestionale generico adattato alle sale: un prodotto pensato da zero per VLT e AWP italiani.</p>
     </div>
-    <div class="feat-bento">
 
-      <div class="feat-cell feat-big reveal">
-        <div class="feat-cell-body">
-          <div class="feat-num">01</div>
-          <h3>Cassa giornaliera</h3>
-          <p>Inserisci contanti, bancomat, ticket e scassettamenti macchina per macchina. Il calcolo del cassetto e del versamento avviene in tempo reale, turno per turno.</p>
-        </div>
-        <div class="feat-cell-visual" aria-hidden="true">
-          <div class="mini-form">
-            <div class="mini-form-row"><span>Fondo cassa</span><span>€ 300</span></div>
-            <div class="mini-form-row"><span>Scassett. totali</span><span>€ 12.460</span></div>
-            <div class="mini-form-row"><span>Bancomat</span><span>€ 420</span></div>
-            <div class="mini-form-row"><span>Ticket pagati</span><span>€ 220</span></div>
-            <div class="mini-form-result"><span>Versamento</span><strong>€ 11.820</strong></div>
-          </div>
-        </div>
+    <!-- 1. Cassa giornaliera -->
+    <div class="feat-row reveal">
+      <div class="feat-row-text">
+        <div class="feat-tag">Cassa giornaliera</div>
+        <h2>Cassetto e versamento<br>calcolati in tempo reale.</h2>
+        <p>Inserisci contanti, bancomat, ticket e scassettamenti. Il calcolo avviene mentre scrivi: nessun foglio Excel, nessun errore di somma alle 23:00.</p>
+        <ul class="feat-checklist">
+          <li>Doppio turno mattino e sera separati</li>
+          <li>Banner verde/rosso immediato sulla quadratura</li>
+          <li>Email automatica ai revisori alla chiusura</li>
+          <li>Storico giornaliero completo e immutabile</li>
+        </ul>
+        <a href="/funzionalita/cassa-giornaliera" class="feat-link">
+          Scopri la cassa giornaliera
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
       </div>
-
-      <div class="feat-cell feat-sm reveal d1">
-        <div class="feat-num">02</div>
-        <h3>Firma digitale</h3>
-        <p>Il revisore firma il versamento su tablet con la propria firma manuale. Ogni ritiro è registrato con firma PNG, IP, timestamp.</p>
-        <div class="feat-firma-preview" aria-hidden="true">
-          <div class="firma-box">
-            <svg viewBox="0 0 120 50" width="120" height="50">
-              <path d="M10 35 C20 10, 35 45, 50 30 C60 20, 70 40, 80 25 C90 15, 100 35, 112 28" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="feat-mock-card">
+          <div class="fmc-header">
+            <span class="fmc-title">Cassa · Turno 2</span>
+            <span class="fmc-badge">Aperta</span>
           </div>
-          <div class="firma-meta">Confermato · 22:14 · IP 10.0.0.5</div>
-        </div>
-      </div>
-
-      <div class="feat-cell feat-sm reveal d2">
-        <div class="feat-num">03</div>
-        <h3>App mobile</h3>
-        <p>Installa come PWA su iPhone e Android. Aggiorna i turni dal telefono, ricevi notifiche push per nuovi ticket o versamenti confermati.</p>
-        <div class="feat-mobile-preview" aria-hidden="true">
-          <div class="phone-notif">
-            <div class="notif-icon">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1a4 4 0 0 0-4 4c0 4.5-2 5.5-2 5.5h12s-2-1-2-5.5a4 4 0 0 0-4-4z"/><path d="M9.7 14a1.9 1.9 0 0 1-3.4 0"/></svg>
+          <div class="fmc-body">
+            <div class="fmc-kpis">
+              <div class="fmc-kpi"><div class="fmc-kpi-l">Versamento</div><div class="fmc-kpi-v">€ 7.820</div></div>
+              <div class="fmc-kpi"><div class="fmc-kpi-l">Scassettamenti</div><div class="fmc-kpi-v">€ 12.460</div></div>
             </div>
-            <div>
-              <div class="notif-title">GestHall Suite</div>
-              <div class="notif-body">Versamento confermato · €7.820</div>
+            <div class="fmc-rows">
+              <div class="fmc-row"><span>Fondo cassa</span><span>€ 300,00</span></div>
+              <div class="fmc-row"><span>Scassettamenti totali</span><span>€ 12.460,00</span></div>
+              <div class="fmc-row"><span>Bancomat</span><span>€ 420,00</span></div>
+              <div class="fmc-row"><span>Ticket pagati</span><span>€ 220,00</span></div>
+            </div>
+            <div class="fmc-result">
+              <span>Versamento netto</span>
+              <strong>€ 11.820,00</strong>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="feat-cell feat-big reveal d1">
-        <div class="feat-cell-body">
-          <div class="feat-num">04</div>
-          <h3>White-label</h3>
-          <p>Logo, colori e nome personalizzati per ogni cliente. Il gestore vede il tuo brand, non il nostro. Ideale per rivenditori e installatori.</p>
-        </div>
-        <div class="feat-cell-visual" aria-hidden="true">
-          <div class="wl-preview">
-            <div class="wl-swatch" style="background: #2563eb"></div>
-            <div class="wl-swatch" style="background: #16a34a"></div>
-            <div class="wl-swatch" style="background: #9333ea"></div>
-            <div class="wl-swatch active" style="background: oklch(0.72 0.16 168)"></div>
-            <div class="wl-swatch" style="background: #dc2626"></div>
+    <!-- 2. Firma digitale -->
+    <div class="feat-row feat-row-rev reveal">
+      <div class="feat-row-text">
+        <div class="feat-tag">Firma digitale</div>
+        <h2>Ogni versamento firmato,<br>tracciato, inattaccabile.</h2>
+        <p>Il revisore firma il ritiro su canvas touch da qualsiasi dispositivo. Firma PNG, timestamp e IP vengono salvati immutabilmente insieme all'importo dichiarato.</p>
+        <ul class="feat-checklist">
+          <li>Firma manuale su tablet, smartphone o PC</li>
+          <li>Dati salvati immutabilmente lato server</li>
+          <li>Badge "Confermato" visibile a tutti</li>
+          <li>Storico completo per il responsabile</li>
+        </ul>
+        <a href="/funzionalita/firma-digitale" class="feat-link">
+          Scopri la firma digitale
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="feat-mock-card">
+          <div class="fmc-header">
+            <span class="fmc-title">Conferma versamento</span>
           </div>
-          <div class="wl-bar">
-            <div class="wl-bar-accent"></div>
-            <span>Sala Fortuna · Cassa giornaliera</span>
+          <div class="fmc-body">
+            <div class="fmc-firma-info">
+              <span>Giornata</span><strong>7 luglio 2026</strong>
+              <span>Importo</span><strong class="fmc-firma-amount">€ 7.820,00</strong>
+            </div>
+            <div class="fmc-firma-canvas">
+              <svg viewBox="0 0 220 64" width="100%" height="64" aria-hidden="true">
+                <path d="M15 50 C30 15, 55 60, 75 40 C90 25, 105 55, 125 35 C140 20, 158 50, 185 38 C200 28, 210 45, 218 40" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="fmc-firma-label">Firma del revisore · 22:14 · IP 10.0.0.5</div>
+            </div>
+            <div class="fmc-firma-btn">Conferma ritiro</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="feat-cell feat-suite-row reveal d2">
-        <div class="feat-suite-half">
-          <div class="feat-suite-label">Suite</div>
-          <h3>Chat interna</h3>
-          <p>Messaggistica in tempo reale tra tutti gli operatori. Testo, emoji, immagini e messaggi vocali. Gruppi, messaggi diretti e indicatore "sta scrivendo".</p>
-          <div class="chat-preview" aria-hidden="true">
-            <div class="chat-bubble chat-in">Hai chiuso il turno serale?</div>
-            <div class="chat-bubble chat-out">Sì, versamento fatto ✓</div>
-            <div class="chat-bubble chat-in chat-voice">🎤 <span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-bar"></span><span class="chat-voice-time">0:12</span></div>
-          </div>
-        </div>
-        <div class="feat-suite-divider" aria-hidden="true"></div>
-        <div class="feat-suite-half">
-          <div class="feat-suite-label">Suite</div>
-          <h3>Web Radio</h3>
-          <p>Musica in sottofondo con le principali stazioni italiane. Controllo volume e cambio stazione senza uscire dall'app.</p>
-          <div class="radio-preview" aria-hidden="true">
-            <div class="radio-now">
-              <div class="radio-waves">
-                <span></span><span></span><span></span><span></span><span></span>
+    <!-- 3. App mobile -->
+    <div class="feat-row reveal">
+      <div class="feat-row-text">
+        <div class="feat-tag">App mobile & push</div>
+        <h2>Installa una volta.<br>Notifiche per sempre.</h2>
+        <p>PWA installabile su iPhone e Android senza app store. Notifiche push native per versamenti confermati e ticket di guasto. Il gestionale in tasca, sempre aggiornato.</p>
+        <ul class="feat-checklist">
+          <li>Installazione dal browser in 3 secondi</li>
+          <li>Notifiche push native iOS e Android</li>
+          <li>Preferenze per tipo di notifica per utente</li>
+          <li>Swipe tra turni su mobile</li>
+        </ul>
+        <a href="/funzionalita/app-mobile" class="feat-link">
+          Scopri l'app mobile
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="feat-row-visual" aria-hidden="true">
+        <div class="feat-phone-wrap">
+          <div class="feat-phone">
+            <div class="feat-phone-notch"></div>
+            <div class="feat-phone-bar">GestHall Suite</div>
+            <div class="feat-phone-content">
+              <div class="fpc-notif">
+                <div class="fpc-notif-icon">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M8 1a4 4 0 0 0-4 4c0 4.5-2 5.5-2 5.5h12s-2-1-2-5.5a4 4 0 0 0-4-4z"/><path d="M9.7 14a1.9 1.9 0 0 1-3.4 0"/></svg>
+                </div>
+                <div>
+                  <div class="fpc-notif-title">GestHall Suite</div>
+                  <div class="fpc-notif-body">Versamento confermato · € 7.820</div>
+                </div>
               </div>
-              <span class="radio-station">Radio DeeJay</span>
-            </div>
-            <div class="radio-stations-mini">
-              <div class="radio-st-item radio-st-active">RAI Radio 1</div>
-              <div class="radio-st-item">m2o</div>
-              <div class="radio-st-item">Radio 105</div>
+              <div class="fpc-kpi-row">
+                <div class="fpc-kpi"><div class="fpc-kpi-l">Oggi</div><div class="fpc-kpi-v">€ 7.820</div></div>
+                <div class="fpc-kpi"><div class="fpc-kpi-l">Settimana</div><div class="fpc-kpi-v">€ 41.200</div></div>
+              </div>
+              <div class="fpc-btn">Apri cassa →</div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
-<!-- ── FEATURES DEEP ────────────────────────────────────────── -->
-<section class="section feat-rows-section">
+<!-- ── ALL FEATURES GRID ─────────────────────────────────────── -->
+<section class="section all-feat-section">
   <div class="container">
-
-    <div class="feat-row reveal">
-      <div class="feat-row-text">
-        <h2>Macchina per macchina,<br>senza errori.</h2>
-        <p>Registra ogni scassettamento con importo, macchina e orario. Il riepilogo mensile e il confronto settimanale Bet/Win sono sempre a portata di mano — incluso l'import XLS da portale SNAI.</p>
-        <ul class="feat-checklist">
-          <li>Storico lifetime per ogni VLT e AWP</li>
-          <li>Grafico mensile con overlay refill</li>
-          <li>Import automatico SNAI e Betwin da XLS</li>
-          <li>Ticket assistenza collegato alla macchina</li>
-        </ul>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="screen-mock">
-          <div class="sm-header">Macchine · Scassettamenti</div>
-          <div class="sm-table">
-            <div class="sm-row sm-row-head"><span>Macchina</span><span>Oggi</span><span>Mese</span></div>
-            <div class="sm-row"><span>VLT 01 · SNAI</span><span>€ 3.240</span><span>€ 41.200</span></div>
-            <div class="sm-row"><span>VLT 02 · SNAI</span><span>€ 2.890</span><span>€ 38.700</span></div>
-            <div class="sm-row"><span>AWP 01 · Betwin</span><span>€ 1.640</span><span>€ 21.400</span></div>
-            <div class="sm-row"><span>AWP 02 · Betwin</span><span>€ 980</span><span>€ 14.100</span></div>
-          </div>
-          <div class="sm-total">Totale giornata: <strong>€ 8.750</strong></div>
-        </div>
-      </div>
+    <div class="sect-header reveal">
+      <h2>Dieci funzionalità.<br>Un solo gestionale.</h2>
+      <p>Dal piano base alle funzionalità Suite: ogni strumento è pensato per le sale giochi italiane.</p>
     </div>
 
-    <div class="feat-row feat-row-rev reveal">
-      <div class="feat-row-text">
-        <h2>Turni, operatori<br>e passaggi di consegne.</h2>
-        <p>Ogni turno ha il suo operatore, il suo cassetto, le sue note. Il calendario turni è visibile a tutti; il passaggio di consegne è strutturato con checklist configurabile e messaggi liberi.</p>
-        <ul class="feat-checklist">
-          <li>Turno mattino e sera separati</li>
-          <li>Autoassegnazione o gestione dal responsabile</li>
-          <li>Passaggio consegne con checklist</li>
-          <li>Audit log completo di ogni operazione</li>
-        </ul>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="screen-mock">
-          <div class="sm-header">Calendario Turni · Luglio 2026</div>
-          <div class="sm-cal">
-            <div class="sm-cal-day"><span class="sm-cal-d">Lun 7</span><span class="sm-cal-op op-a">Marco R.</span><span class="sm-cal-op op-b">Silvia M.</span></div>
-            <div class="sm-cal-day"><span class="sm-cal-d">Mar 8</span><span class="sm-cal-op op-a">Marco R.</span><span class="sm-cal-op sm-empty">—</span></div>
-            <div class="sm-cal-day"><span class="sm-cal-d">Mer 9</span><span class="sm-cal-op op-c">Luigi F.</span><span class="sm-cal-op op-b">Silvia M.</span></div>
-            <div class="sm-cal-day"><span class="sm-cal-d">Gio 10</span><span class="sm-cal-op op-c">Luigi F.</span><span class="sm-cal-op op-a">Marco R.</span></div>
-          </div>
+    {(['essenziale', 'pro', 'suite'] as const).map(plan => (
+      <div class="af-plan-group reveal">
+        <div class={`af-plan-label af-label-${plan}`}>
+          {plan === 'essenziale' && 'Essenziale — da €39/mese'}
+          {plan === 'pro'        && 'Pro — da €69/mese'}
+          {plan === 'suite'      && 'Suite — da €99/mese'}
+        </div>
+        <div class="af-grid">
+          {byPlan[plan].map(f => (
+            <a href={f.slug} class="af-card">
+              <div class="af-card-icon" set:html={f.icon}></div>
+              <div class="af-card-body">
+                <div class="af-card-name">{f.name}</div>
+                <div class="af-card-desc">{f.desc}</div>
+              </div>
+              <svg class="af-card-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          ))}
         </div>
       </div>
-    </div>
+    ))}
 
-    <div class="feat-row reveal">
-      <div class="feat-row-text">
-        <h2>Ogni versamento<br>tracciato e firmato.</h2>
-        <p>Il revisore conferma il ritiro del versamento con firma digitale manuale su qualsiasi dispositivo. Data, ora, IP e firma PNG vengono salvati immutabilmente. Nessun rischio di contestazioni.</p>
-        <ul class="feat-checklist">
-          <li>Email automatica ai revisori alla chiusura</li>
-          <li>Firma a mano su canvas touch</li>
-          <li>Storico con badge "Confermato" in verde</li>
-          <li>Accesso revisore in sola lettura</li>
-        </ul>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="screen-mock">
-          <div class="sm-header">Conferma versamento</div>
-          <div class="firma-dialog">
-            <div class="firma-info">
-              <span>Giornata</span><strong>7 luglio 2026</strong>
-              <span>Importo</span><strong class="firma-amount">€ 7.820,00</strong>
-            </div>
-            <div class="firma-canvas-wrap">
-              <svg viewBox="0 0 200 70" width="200" height="70">
-                <path d="M15 50 C30 15, 55 60, 75 40 C90 25, 105 55, 125 35 C140 20, 158 50, 185 38" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <div class="firma-canvas-label">Firma del revisore</div>
-            </div>
-            <div class="firma-confirm-btn">Conferma ritiro</div>
-          </div>
-        </div>
-      </div>
+    <div class="af-footer reveal">
+      <a href="/funzionalita" class="btn btn-ghost">Esplora tutte le funzionalità →</a>
     </div>
-
   </div>
 </section>
 
@@ -342,8 +313,8 @@ import Layout from '../layouts/Layout.astro';
         <ul class="plan-features">
           <li>Tutto di Pro</li>
           <li>Chat interna tra operatori</li>
-          <li>Web Radio streaming (stazioni italiane)</li>
-          <li>White-label (logo e colori personalizzati)</li>
+          <li>Web Radio streaming</li>
+          <li>White-label (logo e colori)</li>
           <li>Passaggio consegne con checklist</li>
           <li>Integrazione SONOS</li>
           <li>Supporto prioritario</li>
@@ -417,7 +388,8 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.hero { padding: 120px 0 80px; min-height: 100dvh; display: flex; align-items: center }
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero { padding: 120px 0 80px; min-height: 100dvh; display: flex; align-items: center; background: linear-gradient(155deg, oklch(100% 0 0) 0%, oklch(96% 0.012 245) 100%) }
 .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center }
 .hero-text { display: flex; flex-direction: column; gap: 24px }
 .hero-pill {
@@ -426,158 +398,76 @@ import Layout from '../layouts/Layout.astro';
   color: var(--accent); font-size: 13px; font-weight: 600; width: fit-content;
   animation: fadeUp 0.7s var(--ease) 0s both;
 }
-.hero-text h1 {
-  font-size: clamp(2.6rem, 4.5vw, 4.4rem); font-weight: 800; color: var(--text);
-  animation: fadeUp 0.8s var(--ease) 0.08s both;
-}
-.hero-sub {
-  font-size: 17px; color: var(--muted); max-width: 48ch; line-height: 1.7;
-  animation: fadeUp 0.8s var(--ease) 0.17s both;
-}
+.hero-text h1 { font-size: clamp(2.6rem, 4.5vw, 4.4rem); font-weight: 800; color: var(--text); animation: fadeUp 0.8s var(--ease) 0.08s both }
+.hero-sub { font-size: 17px; color: var(--muted); max-width: 48ch; line-height: 1.7; animation: fadeUp 0.8s var(--ease) 0.17s both }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; animation: fadeUp 0.8s var(--ease) 0.26s both }
 .hero-visual { animation: fadeIn 1s var(--ease) 0.12s both }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
 
-.mock {
-  background: #0b0f18; border-radius: 12px; overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 28px 72px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.03);
-}
-.mock-chrome { background: #131926; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1a2231 }
+/* ── HERO MOCK ────────────────────────────────────────────── */
+.mock { background: var(--bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 28px 72px oklch(19% 0.075 245 / 0.12), 0 4px 16px oklch(19% 0.075 245 / 0.06) }
+.mock-chrome { background: var(--surface-2); padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border) }
 .mock-dots { display: flex; gap: 5px }
-.mock-dots span { width: 9px; height: 9px; border-radius: 50%; background: #1e2840 }
-.mock-url { flex: 1; text-align: center; font-size: 11px; color: #3a4a63; font-family: var(--font-body) }
+.mock-dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--border) }
+.mock-url { flex: 1; text-align: center; font-size: 11px; color: var(--faint); font-family: var(--font-body) }
 .mock-app { display: flex; height: 290px }
-.mock-sb { width: 52px; background: #080c14; border-right: 1px solid #141d2e; display: flex; flex-direction: column; align-items: center; padding: 12px 0 10px; gap: 4px }
+.mock-sb { width: 52px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; padding: 12px 0 10px; gap: 4px }
 .mock-sb-logo { width: 28px; height: 28px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center }
 .mock-sb-items { display: flex; flex-direction: column; gap: 2px }
-.mock-sb-item { width: 34px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #2e3f5c }
+.mock-sb-item { width: 34px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--faint) }
 .mock-sb-item svg { width: 14px; height: 14px }
-.mock-sb-item.active { background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
+.mock-sb-item.active { background: var(--accent-sub); color: var(--accent) }
 .mock-sb-foot { margin-top: auto }
-.mock-sb-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #2e3f5c, #1a2535); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #8899bb }
-.mock-main { flex: 1; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 10px }
+.mock-sb-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: var(--muted) }
+.mock-main { flex: 1; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 10px; background: var(--bg) }
 .mock-hdr { display: flex; align-items: center; gap: 8px }
-.mock-hdr-date { font-size: 12px; font-weight: 600; color: #c8d4e8 }
-.mock-hdr-badge { font-size: 9px; padding: 2px 7px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.13); color: oklch(0.72 0.16 168); font-weight: 700 }
+.mock-hdr-date { font-size: 12px; font-weight: 600; color: var(--text) }
+.mock-hdr-badge { font-size: 9px; padding: 2px 7px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent); font-weight: 700 }
 .mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 7px }
-.mock-kpi { background: #131b2a; border-radius: 7px; padding: 8px 10px }
-.mock-kpi-label { font-size: 9px; color: #3a4a63; font-weight: 500; margin-bottom: 2px }
-.mock-kpi-val { font-size: 19px; font-weight: 700; color: #dce8f5; font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.mock-kpi { background: var(--surface); border-radius: 7px; padding: 8px 10px; border: 1px solid var(--border-sub) }
+.mock-kpi-label { font-size: 9px; color: var(--faint); font-weight: 500; margin-bottom: 2px }
+.mock-kpi-val { font-size: 19px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
 .mock-tabs { display: flex; gap: 5px }
-.mock-tab { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 6px; color: #3a4a63 }
-.mock-tab.on { background: oklch(0.72 0.16 168 / 0.11); color: oklch(0.72 0.16 168); display: flex; align-items: center; gap: 4px }
-.mock-tab-dot { width: 5px; height: 5px; border-radius: 50%; background: oklch(0.72 0.16 168); flex-shrink: 0 }
+.mock-tab { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 6px; color: var(--faint) }
+.mock-tab.on { background: var(--accent-sub); color: var(--accent); display: flex; align-items: center; gap: 4px }
+.mock-tab-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0 }
 .mock-rows { display: flex; flex-direction: column; gap: 5px }
 .mock-row { display: flex; justify-content: space-between; font-size: 11px }
-.mock-rl { color: #3a4a63 }
-.mock-rv { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
-.mock-result { margin-top: 4px; padding: 7px 10px; border-radius: 7px; background: oklch(0.72 0.16 168 / 0.11); border: 1px solid oklch(0.72 0.16 168 / 0.22); display: flex; justify-content: space-between; align-items: center }
-.mock-rl-acc { font-size: 10px; font-weight: 700; color: oklch(0.72 0.16 168) }
-.mock-rv-acc { font-size: 16px; font-weight: 800; color: oklch(0.72 0.16 168); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.mock-rl { color: var(--faint) }
+.mock-rv { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums }
+.mock-result { margin-top: 4px; padding: 7px 10px; border-radius: 7px; background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.22); display: flex; justify-content: space-between; align-items: center }
+.mock-rl-acc { font-size: 10px; font-weight: 700; color: var(--accent) }
+.mock-rv-acc { font-size: 16px; font-weight: 800; color: var(--accent); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
 
-.trust-strip { border-top: 1px solid var(--border-sub); border-bottom: 1px solid var(--border-sub); padding: 16px 0; background: var(--surface) }
+/* ── TRUST ────────────────────────────────────────────────── */
+.trust-strip { padding: 18px 0; background: oklch(19% 0.075 245) }
 .trust-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px }
-.trust-items li { font-size: 12px; font-weight: 600; color: var(--faint); letter-spacing: 0.02em; text-transform: uppercase }
+.trust-items li { font-size: 12px; font-weight: 600; color: oklch(48% 0.04 245); letter-spacing: 0.02em; text-transform: uppercase }
 
+/* ── SHARED ───────────────────────────────────────────────── */
 .section { padding: 96px 0 }
-.sect-header { margin-bottom: 56px }
+.sect-header { margin-bottom: 72px }
 .sect-header h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; margin-bottom: 16px }
 .sect-header p { font-size: 17px; color: var(--muted); max-width: 50ch }
 
-.feat-bento { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 14px }
-.feat-cell:nth-child(1) { grid-column: 1; grid-row: 1 }
-.feat-cell:nth-child(2) { grid-column: 2; grid-row: 1 }
-.feat-cell:nth-child(3) { grid-column: 1; grid-row: 2 }
-.feat-cell:nth-child(4) { grid-column: 2; grid-row: 2 }
-.feat-cell:nth-child(5) { grid-column: 1 / -1; grid-row: 3 }
-.feat-cell { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 28px; display: flex; flex-direction: column; gap: 16px; overflow: hidden }
-.feat-big { flex-direction: row; align-items: flex-start; gap: 32px }
-.feat-cell-body { flex: 1; min-width: 0 }
-.feat-cell-visual { flex-shrink: 0 }
-.feat-num { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 8px }
-.feat-cell h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text) }
-.feat-cell p { font-size: 14px; color: var(--muted); line-height: 1.65 }
+/* ── FEAT TAG + LINK ──────────────────────────────────────── */
+.feat-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 12px }
+.feat-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 20px; transition: gap .2s var(--ease) }
+.feat-link:hover { gap: 10px }
 
-.mini-form { background: #0d1119; border-radius: 10px; padding: 14px 16px; border: 1px solid #1a2231; min-width: 200px }
-.mini-form-row { display: flex; justify-content: space-between; font-size: 11px; padding: 5px 0; border-bottom: 1px solid #141d2e; color: #4a5568 }
-.mini-form-row span:last-child { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
-.mini-form-result { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 0; font-size: 11px; color: oklch(0.72 0.16 168) }
-.mini-form-result strong { font-size: 18px; font-family: var(--font-head); font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.feat-firma-preview { margin-top: 4px }
-.firma-box { background: #0d1119; border-radius: 8px; padding: 10px 12px; border: 1px solid #1a2231; display: inline-block }
-.firma-meta { font-size: 10px; color: var(--faint); margin-top: 6px; font-variant-numeric: tabular-nums }
-.phone-notif { display: flex; align-items: center; gap: 10px; background: #0d1119; border-radius: 12px; padding: 10px 14px; border: 1px solid #1a2231; margin-top: 4px }
-.notif-icon { width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0; background: oklch(0.72 0.16 168 / 0.15); color: oklch(0.72 0.16 168); display: flex; align-items: center; justify-content: center }
-.notif-icon svg { width: 16px; height: 16px }
-.notif-title { font-size: 11px; font-weight: 700; color: #c8d4e8; margin-bottom: 2px }
-.notif-body { font-size: 10px; color: #4a5568 }
-.wl-preview { display: flex; gap: 8px; align-items: center; padding: 4px 0 }
-.wl-swatch { width: 26px; height: 26px; border-radius: 6px; border: 2px solid transparent; transition: transform 0.15s }
-.wl-swatch.active { border-color: var(--text); transform: scale(1.15) }
-.wl-bar { display: flex; align-items: center; gap: 8px; margin-top: 12px; background: #0d1119; border-radius: 8px; padding: 8px 12px; border: 1px solid #1a2231; font-size: 11px; color: #4a5568 }
-.wl-bar-accent { width: 3px; height: 18px; border-radius: 2px; background: oklch(0.72 0.16 168); flex-shrink: 0 }
-
-/* ── Suite row (Chat + Radio) ───────────────────────── */
-.feat-suite-row { flex-direction: row; align-items: stretch; gap: 0; padding: 0; background: oklch(0.11 0.025 240); border-color: oklch(0.72 0.16 168 / 0.2) }
-.feat-suite-half { flex: 1; padding: 28px 32px; display: flex; flex-direction: column; gap: 14px }
-.feat-suite-divider { width: 1px; background: oklch(0.72 0.16 168 / 0.15); flex-shrink: 0; margin: 24px 0 }
-.feat-suite-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.16 168); background: oklch(0.72 0.16 168 / 0.12); display: inline-block; padding: 3px 8px; border-radius: 4px; align-self: flex-start }
-.feat-suite-row h3 { font-size: 19px; font-weight: 700; color: oklch(0.92 0.01 240); margin-bottom: 0 }
-.feat-suite-row p { font-size: 13.5px; color: oklch(0.55 0.03 240); line-height: 1.6; margin-bottom: 4px }
-
-/* Chat preview */
-.chat-preview { display: flex; flex-direction: column; gap: 6px; margin-top: 4px }
-.chat-bubble { font-size: 11px; padding: 7px 11px; border-radius: 12px; max-width: 85%; line-height: 1.4 }
-.chat-in { background: #1a2332; color: #c8d4e8; border-bottom-left-radius: 4px; align-self: flex-start }
-.chat-out { background: oklch(0.72 0.16 168 / 0.2); color: oklch(0.82 0.12 168); border-bottom-right-radius: 4px; align-self: flex-end }
-.chat-typing { display: flex; gap: 3px; align-items: center; padding: 8px 12px; background: #1a2332; border-radius: 12px; border-bottom-left-radius: 4px; width: fit-content; margin-top: 2px }
-.chat-typing span { width: 5px; height: 5px; border-radius: 50%; background: oklch(0.45 0.04 240); animation: ct-pulse 1.1s ease-in-out infinite }
-.chat-typing span:nth-child(2) { animation-delay: .18s }
-.chat-typing span:nth-child(3) { animation-delay: .36s }
-@keyframes ct-pulse { 0%,100% { transform: scaleY(0.5); opacity: .4 } 50% { transform: scaleY(1); opacity: 1 } }
-@media (prefers-reduced-motion: reduce) { .chat-typing span { animation: none; opacity: .6 } }
-.chat-voice { display: flex; align-items: center; gap: 5px }
-.chat-voice-bar { display: inline-block; width: 3px; border-radius: 2px; background: oklch(0.55 0.04 240 / 0.7); animation: cv-bar 1.2s ease-in-out infinite }
-.chat-voice-bar:nth-child(2) { height: 10px; animation-delay: 0s }
-.chat-voice-bar:nth-child(3) { height: 16px; animation-delay: .15s }
-.chat-voice-bar:nth-child(4) { height: 8px; animation-delay: .3s }
-.chat-voice-bar:nth-child(5) { height: 13px; animation-delay: .1s }
-@keyframes cv-bar { 0%,100%{transform:scaleY(0.4);opacity:.5} 50%{transform:scaleY(1);opacity:1} }
-.chat-voice-time { font-size: 10px; color: oklch(0.55 0.04 240 / 0.7); margin-left: 2px }
-@media (prefers-reduced-motion: reduce) { .chat-voice-bar { animation: none; opacity: .6 } }
-
-/* Radio preview */
-.radio-preview { display: flex; flex-direction: column; gap: 12px; margin-top: 4px }
-.radio-now { display: flex; align-items: center; gap: 10px; background: #0d1119; border-radius: 10px; padding: 10px 14px; border: 1px solid #1a2231 }
-.radio-waves { display: flex; align-items: flex-end; gap: 2.5px; height: 20px }
-.radio-waves span { display: block; width: 3px; border-radius: 2px; background: oklch(0.72 0.16 168); transform: scaleY(0.2); transform-origin: bottom; animation: rw 1s ease-in-out infinite }
-.radio-waves span:nth-child(2) { animation-delay: .13s }
-.radio-waves span:nth-child(3) { animation-delay: .26s }
-.radio-waves span:nth-child(4) { animation-delay: .13s }
-.radio-waves span:nth-child(5) { animation-delay: 0s }
-@keyframes rw { 0%,100% { transform: scaleY(0.2) } 50% { transform: scaleY(1) } }
-@media (prefers-reduced-motion: reduce) { .radio-waves span { transform: scaleY(0.6) !important; animation: none } }
-.radio-station { font-size: 12px; font-weight: 600; color: #c8d4e8 }
-.radio-stations-mini { display: flex; flex-direction: column; gap: 3px }
-.radio-st-item { font-size: 11px; padding: 5px 10px; border-radius: 6px; color: oklch(0.45 0.04 240); cursor: default }
-.radio-st-active { background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168); font-weight: 600 }
-
-@media (max-width: 640px) {
-  .feat-suite-row { flex-direction: column }
-  .feat-suite-divider { width: auto; height: 1px; margin: 0 24px }
-  .feat-suite-half { padding: 22px 24px }
-}
-
-.feat-rows-section { padding: 80px 0 }
-.feat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 64px 0; border-top: 1px solid var(--border-sub) }
-.feat-row:first-child { border-top: none }
+/* ── FEAT ROWS ────────────────────────────────────────────── */
+.feat-section { padding-bottom: 80px }
+.feat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 72px 0; border-top: 1px solid var(--border-sub) }
+.feat-row:first-of-type { border-top: none; padding-top: 0 }
 .feat-row-rev .feat-row-text { order: 2 }
 .feat-row-rev .feat-row-visual { order: 1 }
-.feat-row-text h2 { font-size: clamp(1.7rem, 2.5vw, 2.4rem); margin-bottom: 16px }
+.feat-row-text { display: flex; flex-direction: column }
+.feat-row-text h2 { font-size: clamp(1.7rem, 2.5vw, 2.4rem); font-weight: 800; margin-bottom: 16px }
 .feat-row-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
+.feat-row-visual { display: flex; align-items: center; justify-content: center }
+
 .feat-checklist { display: flex; flex-direction: column; gap: 8px }
 .feat-checklist li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted) }
 .feat-checklist li::before {
@@ -587,36 +477,72 @@ import Layout from '../layouts/Layout.astro';
   background-size: 10px; background-position: center; background-repeat: no-repeat;
 }
 
-.screen-mock { background: #0b0f18; border-radius: 12px; border: 1px solid #1a2231; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5) }
-.sm-header { background: #131926; padding: 10px 16px; font-size: 11px; font-weight: 600; color: #4a5568; border-bottom: 1px solid #1a2231 }
-.sm-table { padding: 12px 16px; display: flex; flex-direction: column; gap: 2px }
-.sm-row { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; padding: 7px 0; font-size: 12px; border-bottom: 1px solid #141d2e }
-.sm-row:last-child { border-bottom: none }
-.sm-row-head { font-size: 10px; font-weight: 700; color: #2e3f5c }
-.sm-row span:first-child { color: #8899bb }
-.sm-row span:not(:first-child) { color: #c8d4e8; font-weight: 600; font-variant-numeric: tabular-nums }
-.sm-total { padding: 10px 16px; font-size: 13px; color: oklch(0.72 0.16 168); background: oklch(0.72 0.16 168 / 0.06); font-weight: 600; font-variant-numeric: tabular-nums }
-.sm-total strong { font-weight: 800 }
-.sm-cal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 16px }
-.sm-cal-day { display: flex; flex-direction: column; gap: 4px }
-.sm-cal-d { font-size: 9px; font-weight: 700; color: #3a4a63; margin-bottom: 2px }
-.sm-cal-op { font-size: 10px; padding: 4px 6px; border-radius: 5px; font-weight: 600; font-variant-numeric: tabular-nums }
-.op-a { background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
-.op-b { background: oklch(0.72 0.16 210 / 0.12); color: oklch(0.72 0.16 210) }
-.op-c { background: oklch(0.72 0.16 60  / 0.12); color: oklch(0.72 0.16 60) }
-.sm-empty { background: #141d2e; color: #2e3f5c }
-.firma-dialog { padding: 16px }
-.firma-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin-bottom: 14px; font-size: 12px; color: #4a5568; align-items: baseline }
-.firma-info strong { color: #c8d4e8; font-weight: 600 }
-.firma-amount { font-size: 18px; font-weight: 800; color: oklch(0.72 0.16 168); font-family: var(--font-head); font-variant-numeric: tabular-nums }
-.firma-canvas-wrap { background: #131926; border-radius: 8px; padding: 14px; border: 1px dashed #1a2231; margin-bottom: 12px; text-align: center }
-.firma-canvas-label { font-size: 9px; color: #2e3f5c; margin-top: 4px }
-.firma-confirm-btn { background: oklch(0.72 0.16 168); color: #0a0f18; font-size: 12px; font-weight: 700; padding: 8px 18px; border-radius: 7px; text-align: center; display: inline-block }
+/* ── FEAT MOCK CARD ───────────────────────────────────────── */
+.feat-mock-card { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: var(--rx-l); overflow: hidden; box-shadow: 0 24px 64px oklch(19% 0.075 245 / 0.1), 0 4px 16px oklch(19% 0.075 245 / 0.05) }
+.fmc-header { background: var(--surface-2); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border) }
+.fmc-title { font-size: 12px; font-weight: 600; color: var(--muted) }
+.fmc-badge { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent) }
+.fmc-body { padding: 18px }
+.fmc-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px }
+.fmc-kpi { background: var(--surface); border-radius: var(--rx); padding: 10px 14px; border: 1px solid var(--border-sub) }
+.fmc-kpi-l { font-size: 10px; color: var(--faint); margin-bottom: 3px }
+.fmc-kpi-v { font-size: 20px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.fmc-rows { display: flex; flex-direction: column; margin-bottom: 12px }
+.fmc-row { display: flex; justify-content: space-between; font-size: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-sub) }
+.fmc-row:last-child { border-bottom: none }
+.fmc-row span:first-child { color: var(--muted) }
+.fmc-row span:last-child { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums }
+.fmc-result { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; border-radius: var(--rx); background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.25) }
+.fmc-result span { font-size: 12px; font-weight: 600; color: var(--accent) }
+.fmc-result strong { font-size: 22px; font-weight: 800; color: var(--accent); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.fmc-firma-info { display: grid; grid-template-columns: auto 1fr; gap: 5px 16px; margin-bottom: 14px; font-size: 12px; color: var(--muted); align-items: baseline }
+.fmc-firma-info strong { color: var(--text); font-weight: 600 }
+.fmc-firma-amount { font-size: 20px; font-weight: 800; color: var(--accent); font-family: var(--font-head); font-variant-numeric: tabular-nums }
+.fmc-firma-canvas { background: var(--surface); border-radius: var(--rx); border: 1px dashed var(--border); padding: 14px; margin-bottom: 12px; text-align: center }
+.fmc-firma-label { font-size: 9px; color: var(--faint); margin-top: 4px }
+.fmc-firma-btn { display: inline-block; background: var(--accent); color: oklch(0.1 0 0); font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: var(--rx) }
 
-.pricing-section { background: var(--surface) }
+/* ── PHONE MOCK ───────────────────────────────────────────── */
+.feat-phone-wrap { display: flex; justify-content: center }
+.feat-phone { background: var(--bg); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; width: 260px; box-shadow: 0 24px 64px oklch(19% 0.075 245 / 0.1) }
+.feat-phone-notch { width: 72px; height: 6px; border-radius: 3px; background: var(--border); margin: 10px auto 0 }
+.feat-phone-bar { background: var(--surface-2); padding: 10px 18px; font-size: 13px; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border) }
+.feat-phone-content { padding: 14px; display: flex; flex-direction: column; gap: 10px }
+.fpc-notif { display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: var(--rx-m); padding: 11px 13px; border: 1px solid var(--border-sub) }
+.fpc-notif-icon { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; background: var(--accent-sub); color: var(--accent); display: flex; align-items: center; justify-content: center }
+.fpc-notif-title { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 2px }
+.fpc-notif-body { font-size: 10px; color: var(--muted) }
+.fpc-kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
+.fpc-kpi { background: var(--surface); border-radius: var(--rx); padding: 9px 11px; border: 1px solid var(--border-sub) }
+.fpc-kpi-l { font-size: 9px; color: var(--faint); margin-bottom: 2px }
+.fpc-kpi-v { font-size: 17px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.fpc-btn { background: var(--accent); color: oklch(0.1 0 0); font-size: 12px; font-weight: 700; padding: 9px 16px; border-radius: var(--rx); text-align: center }
+
+/* ── ALL FEATURES GRID ────────────────────────────────────── */
+.all-feat-section { background: var(--surface); padding-bottom: 80px }
+.af-plan-group { margin-bottom: 48px }
+.af-plan-group:last-of-type { margin-bottom: 0 }
+.af-plan-label { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-sub) }
+.af-label-essenziale { color: oklch(0.50 0.14 168) }
+.af-label-pro        { color: oklch(0.45 0.18 250) }
+.af-label-suite      { color: oklch(0.45 0.18 300) }
+.af-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px }
+.af-card { display: flex; align-items: flex-start; gap: 12px; background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-m); padding: 16px; transition: all .2s var(--ease) }
+.af-card:hover { border-color: oklch(0.72 0.16 168 / 0.45); box-shadow: 0 4px 16px var(--accent-glow); transform: translateY(-1px) }
+.af-card-icon { width: 34px; height: 34px; flex-shrink: 0; background: var(--accent-sub); border-radius: var(--rx); display: flex; align-items: center; justify-content: center; color: var(--accent); padding: 8px }
+.af-card-icon svg { width: 100%; height: 100% }
+.af-card-body { flex: 1; min-width: 0 }
+.af-card-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px }
+.af-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5 }
+.af-card-arrow { color: var(--faint); flex-shrink: 0; margin-top: 3px; transition: transform .2s var(--ease), color .2s }
+.af-card:hover .af-card-arrow { transform: translateX(3px); color: var(--accent) }
+.af-footer { margin-top: 40px; display: flex; justify-content: center }
+
+/* ── PRICING ──────────────────────────────────────────────── */
+.pricing-section { background: var(--bg) }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px }
-.plan { background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; position: relative }
-.plan-featured { border-color: oklch(0.72 0.16 168 / 0.5); background: oklch(0.14 0.02 200); box-shadow: 0 0 0 1px oklch(0.72 0.16 168 / 0.2), 0 12px 40px oklch(0.72 0.16 168 / 0.1) }
+.plan { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; position: relative }
+.plan-featured { border-color: oklch(0.72 0.16 168 / 0.45); background: oklch(97% 0.025 168); box-shadow: 0 0 0 1px oklch(0.72 0.16 168 / 0.18), 0 12px 40px oklch(0.72 0.16 168 / 0.1) }
 .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(0.1 0 0); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 999px; white-space: nowrap }
 .plan-name { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px }
 .plan-price { display: flex; align-items: baseline; gap: 2px; font-family: var(--font-head); font-weight: 800; color: var(--text); font-size: 52px; letter-spacing: -0.04em; line-height: 1 }
@@ -627,16 +553,16 @@ import Layout from '../layouts/Layout.astro';
 .plan-features { display: flex; flex-direction: column; gap: 10px }
 .plan-features li { font-size: 14px; color: var(--muted); padding-left: 22px; position: relative }
 .plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 13px }
-.plan-featured .plan-features li { color: oklch(0.78 0.01 255) }
 .pricing-note { font-size: 14px; color: var(--faint); text-align: center }
 
-.resellers-section { background: var(--bg) }
+/* ── RESELLERS ────────────────────────────────────────────── */
+.resellers-section { background: var(--surface) }
 .resellers-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center }
 .resellers-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 16px }
 .resellers-text h2 { font-size: clamp(1.7rem, 2.4vw, 2.4rem); margin-bottom: 16px }
 .resellers-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
-.resellers-mockup { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); overflow: hidden }
-.rm-header { background: #131926; padding: 12px 18px; font-size: 12px; font-weight: 600; color: #4a5568; border-bottom: 1px solid var(--border-sub) }
+.resellers-mockup { background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-l); overflow: hidden }
+.rm-header { background: var(--surface-2); padding: 12px 18px; font-size: 12px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border) }
 .rm-installs { padding: 8px 0 }
 .rm-install { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border-sub) }
 .rm-install:last-child { border-bottom: none }
@@ -645,39 +571,39 @@ import Layout from '../layouts/Layout.astro';
 .rm-dot-amber { background: #fbbf24 }
 .rm-name { font-size: 13px; font-weight: 600; color: var(--text) }
 .rm-sub  { font-size: 11px; color: var(--faint) }
-.rm-plan { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; background: oklch(0.72 0.16 168 / 0.12); color: oklch(0.72 0.16 168) }
-.rm-plan-suite { background: oklch(0.72 0.16 300 / 0.12); color: oklch(0.72 0.16 300) }
+.rm-plan { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent) }
+.rm-plan-suite { background: oklch(0.72 0.16 300 / 0.1); color: oklch(0.55 0.14 300) }
 .rm-plan-ess   { background: var(--surface-2); color: var(--muted) }
 
-.demo-section { background: var(--surface) }
+/* ── DEMO ─────────────────────────────────────────────────── */
+.demo-section { background: var(--bg) }
 .demo-inner { max-width: 560px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px }
 .demo-inner h2 { font-size: clamp(1.9rem, 3vw, 2.8rem) }
 .demo-inner > p { font-size: 16px; color: var(--muted) }
 .demo-form { display: flex; gap: 10px; width: 100% }
-.demo-form input { flex: 1; padding: 13px 18px; border-radius: var(--rx-m); background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 15px; outline: none; transition: border-color 0.15s }
+.demo-form input { flex: 1; padding: 13px 18px; border-radius: var(--rx-m); background: var(--surface); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 15px; outline: none; transition: border-color 0.15s }
 .demo-form input:focus { border-color: oklch(0.72 0.16 168 / 0.6) }
 .demo-form input::placeholder { color: var(--faint) }
 .demo-note { font-size: 13px; color: var(--faint) }
 .demo-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
 
-@media (max-width: 1024px) { .feat-row-visual .screen-mock { font-size: 10px } }
+/* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .hero { padding: 96px 0 48px; min-height: auto }
   .hero-inner { grid-template-columns: 1fr; gap: 48px }
   .hero-visual { max-width: 520px; margin: 0 auto }
-  .feat-bento { grid-template-columns: 1fr }
-  .feat-cell:nth-child(n) { grid-column: 1 }
-  .feat-big { flex-direction: column }
-  .feat-row { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 }
+  .feat-row { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 }
   .feat-row-rev .feat-row-text, .feat-row-rev .feat-row-visual { order: 0 }
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 32px }
   .resellers-inner { grid-template-columns: 1fr; gap: 48px }
+  .feat-phone { width: 240px }
 }
 @media (max-width: 640px) {
   .hero-text h1 { font-size: 2.4rem }
   .hero-sub { font-size: 15px }
   .hero-visual { display: none }
   .demo-form { flex-direction: column }
+  .af-grid { grid-template-columns: 1fr }
 }
 </style>
 

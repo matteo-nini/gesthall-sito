@@ -1,0 +1,121 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Anagrafica giocatori e gestione prestiti sala giochi · GestHall Suite"
+  description="Anagrafica completa dei giocatori con CRUD. Gestione prestiti e rientri con saldo live. Integrazione automatica con l'elenco persone."
+  tag="Giocatori e prestiti"
+  heading="Anagrafica e prestiti senza fogli Excel."
+  sub="Registro completo dei giocatori con dati anagrafici. Prestiti e rientri con saldo aggiornato in tempo reale. Tutto collegato, niente da sincronizzare a mano."
+  plan="pro"
+  related={['cassa-giornaliera', 'ticket-assistenza', 'report-analisi']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="fmc-header">
+      <span class="fmc-title">Giocatori · Prestiti e rientri</span>
+    </div>
+    <div class="gp-player-card">
+      <div class="gp-avatar">RB</div>
+      <div class="gp-player-info">
+        <div class="gp-player-name">Roberto Bianchi</div>
+        <div class="gp-player-meta">nato 12/03/1971 · tel. 333 4567890</div>
+      </div>
+      <div class="gp-saldo-wrap">
+        <div class="gp-saldo-label">Saldo</div>
+        <div class="gp-saldo gp-saldo-neg">− € 320,00</div>
+      </div>
+    </div>
+    <div class="gp-movimenti">
+      <div class="gp-mov gp-mov-head"><span>Data</span><span>Tipo</span><span>Importo</span></div>
+      <div class="gp-mov">
+        <span>7 lug</span>
+        <span class="gp-tipo gp-prestito">Prestito</span>
+        <span class="gp-importo gp-neg">− € 200,00</span>
+      </div>
+      <div class="gp-mov">
+        <span>5 lug</span>
+        <span class="gp-tipo gp-rientro">Rientro</span>
+        <span class="gp-importo gp-pos">+ € 100,00</span>
+      </div>
+      <div class="gp-mov">
+        <span>2 lug</span>
+        <span class="gp-tipo gp-prestito">Prestito</span>
+        <span class="gp-importo gp-neg">− € 220,00</span>
+      </div>
+    </div>
+    <div class="gp-actions">
+      <div class="gp-btn gp-btn-prestito">+ Prestito</div>
+      <div class="gp-btn gp-btn-rientro">+ Rientro</div>
+    </div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">Crea l'anagrafica</div>
+      <div class="fp-step-desc">Aggiungi nome, cognome, data di nascita, telefono ed email del giocatore. Se il modulo Prestiti è attivo, la scheda prestiti viene creata automaticamente insieme all'anagrafica.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Registra prestiti e rientri</div>
+      <div class="fp-step-desc">Ogni movimento (prestito o rientro) viene registrato con data, importo e note opzionali. Il saldo si aggiorna in tempo reale: subito visibile nell'elenco giocatori.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Monitora i saldi aperti</div>
+      <div class="fp-step-desc">L'elenco giocatori mostra il saldo attuale per ogni persona. Chi ha un prestito aperto è immediatamente riconoscibile. Lo storico completo dei movimenti è sempre accessibile.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Anagrafica e prestiti integrati.</strong> Creare un giocatore in anagrafica genera automaticamente la scheda prestiti collegata. Nessuna doppia registrazione.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Saldo sempre aggiornato.</strong> Il saldo netto di ogni giocatore è visibile nell'elenco principale senza dover aprire la scheda singola.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Storico completo dei movimenti.</strong> Ogni prestito e rientro è registrato con data, importo, note e operatore che ha effettuato la registrazione.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Persona senza anagrafica.</strong> Puoi registrare prestiti anche per persone non ancora in anagrafica, aggiungendo solo il nome. Il collegamento si può fare in seguito.</div>
+      </div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.gp-player-card { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--border-sub) }
+.gp-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, oklch(0.65 0.14 250), oklch(0.55 0.18 280)); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: oklch(97% 0.005 245); flex-shrink: 0 }
+.gp-player-info { flex: 1 }
+.gp-player-name { font-size: 13px; font-weight: 700; color: var(--text) }
+.gp-player-meta { font-size: 10px; color: var(--faint) }
+.gp-saldo-wrap { text-align: right }
+.gp-saldo-label { font-size: 9px; color: var(--faint); text-transform: uppercase; letter-spacing: .05em }
+.gp-saldo { font-size: 16px; font-weight: 800; font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
+.gp-saldo-neg { color: oklch(0.45 0.18 25) }
+.gp-saldo-pos { color: oklch(0.45 0.18 155) }
+.gp-movimenti { display: flex; flex-direction: column }
+.gp-mov { display: grid; grid-template-columns: auto 1fr auto; gap: 8px 16px; padding: 8px 18px; font-size: 12px; border-bottom: 1px solid var(--border-sub); align-items: center }
+.gp-mov:last-child { border-bottom: none }
+.gp-mov-head { font-size: 10px; font-weight: 700; color: var(--faint) }
+.gp-mov span:first-child { color: var(--muted) }
+.gp-tipo { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px }
+.gp-prestito { background: oklch(96% 0.04 25); color: oklch(0.45 0.18 25) }
+.gp-rientro  { background: oklch(96% 0.05 155); color: oklch(0.42 0.18 155) }
+.gp-importo { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right }
+.gp-neg { color: oklch(0.45 0.18 25) }
+.gp-pos { color: oklch(0.45 0.18 155) }
+.gp-actions { display: flex; gap: 8px; padding: 12px 18px }
+.gp-btn { flex: 1; text-align: center; font-size: 11px; font-weight: 700; padding: 7px; border-radius: var(--rx) }
+.gp-btn-prestito { background: oklch(96% 0.04 25); color: oklch(0.45 0.18 25) }
+.gp-btn-rientro  { background: oklch(96% 0.05 155); color: oklch(0.42 0.18 155) }
+</style>

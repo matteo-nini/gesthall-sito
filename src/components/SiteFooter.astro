@@ -45,31 +45,35 @@
 </footer>
 
 <style>
-.site-footer { background: var(--bg); border-top: 1px solid var(--border-sub); padding: 64px 0 0 }
+.site-footer {
+  background: oklch(19% 0.075 245);
+  border-top: 1px solid oklch(26% 0.085 245);
+  padding: 64px 0 0;
+}
 .footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; padding-bottom: 48px }
 .slogo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px }
 .slogo-name {
   font-family: var(--font-head); font-size: 18px; font-weight: 300;
-  letter-spacing: -0.03em; color: var(--text);
+  letter-spacing: -0.03em; color: oklch(93% 0.008 245);
 }
 .slogo-name strong { font-weight: 700 }
-.footer-tagline { font-size: 14px; color: var(--faint) }
+.footer-tagline { font-size: 14px; color: oklch(50% 0.04 245) }
 .footer-links { display: flex; gap: 48px }
 .footer-col { display: flex; flex-direction: column; gap: 10px }
 .footer-col-head {
-  font-size: 12px; font-weight: 700; color: var(--muted);
+  font-size: 12px; font-weight: 700; color: oklch(78% 0.02 245);
   text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
 }
-.footer-col a { font-size: 14px; color: var(--faint); transition: color 0.15s }
-.footer-col a:hover { color: var(--text) }
+.footer-col a { font-size: 14px; color: oklch(50% 0.04 245); transition: color 0.15s }
+.footer-col a:hover { color: oklch(82% 0.02 245) }
 .footer-bottom {
-  padding: 20px 0; border-top: 1px solid var(--border-sub);
-  font-size: 13px; color: var(--faint);
+  padding: 20px 0; border-top: 1px solid oklch(26% 0.085 245);
+  font-size: 13px; color: oklch(40% 0.04 245);
   display: flex; justify-content: space-between; align-items: center;
 }
 .footer-bottom-links { display: flex; gap: 16px }
-.footer-bottom-links a { color: var(--faint); transition: color 0.15s }
-.footer-bottom-links a:hover { color: var(--text) }
+.footer-bottom-links a { color: oklch(40% 0.04 245); transition: color 0.15s }
+.footer-bottom-links a:hover { color: oklch(65% 0.035 245) }
 
 @media (max-width: 900px) {
   .footer-inner { grid-template-columns: 1fr; gap: 40px }

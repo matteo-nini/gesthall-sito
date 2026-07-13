@@ -1,4 +1,5 @@
 ---
+import { byPlan } from '../data/features.ts';
 ---
 <header class="snav" id="snav">
   <div class="container snav-inner">
@@ -12,13 +13,70 @@
       </svg>
       <span class="slogo-name">GestHall <strong>Suite</strong></span>
     </a>
+
     <nav class="snav-links" id="snav-links" aria-label="Navigazione principale">
-      <a href="/#funzionalita">Funzionalità</a>
+
+      <!-- Funzionalità megamenu -->
+      <div class="snav-mega-wrap" id="snav-mega-wrap">
+        <button class="snav-mega-btn" id="snav-mega-btn" aria-expanded="false" aria-controls="snav-mega">
+          Funzionalità
+          <svg class="snav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </button>
+        <div class="snav-mega" id="snav-mega" role="region" aria-label="Tutte le funzionalità">
+          <div class="snav-mega-inner">
+
+            <div class="snav-mega-col">
+              <div class="snav-mega-head snav-mega-head-ess">Essenziale</div>
+              {byPlan.essenziale.map(f => (
+                <a href={f.slug} class="snav-mega-item">
+                  <div class="snav-mega-icon" set:html={f.icon}></div>
+                  <div>
+                    <div class="snav-mega-name">{f.name}</div>
+                    <div class="snav-mega-desc">{f.desc}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div class="snav-mega-col">
+              <div class="snav-mega-head snav-mega-head-pro">Pro</div>
+              {byPlan.pro.map(f => (
+                <a href={f.slug} class="snav-mega-item">
+                  <div class="snav-mega-icon" set:html={f.icon}></div>
+                  <div>
+                    <div class="snav-mega-name">{f.name}</div>
+                    <div class="snav-mega-desc">{f.desc}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div class="snav-mega-col">
+              <div class="snav-mega-head snav-mega-head-suite">Suite</div>
+              {byPlan.suite.map(f => (
+                <a href={f.slug} class="snav-mega-item">
+                  <div class="snav-mega-icon" set:html={f.icon}></div>
+                  <div>
+                    <div class="snav-mega-name">{f.name}</div>
+                    <div class="snav-mega-desc">{f.desc}</div>
+                  </div>
+                </a>
+              ))}
+              <a href="/funzionalita" class="snav-mega-all">Vedi tutte →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <a href="/#prezzi">Prezzi</a>
       <a href="/#rivenditori">Rivenditori</a>
       <a href="/docs">Docs</a>
       <a href="/contatti">Contatti</a>
     </nav>
+
     <a href="/#demo" class="btn btn-primary snav-cta">Inizia ora</a>
     <button class="snav-toggle" id="snav-toggle" aria-label="Apri menu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -36,10 +94,11 @@
   transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
 }
 .snav.scrolled {
-  background: oklch(0.12 0.012 255 / 0.88);
+  background: oklch(99.5% 0.004 245 / 0.92);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-bottom: 1px solid oklch(0.22 0.01 255);
+  border-bottom: 1px solid oklch(87% 0.022 245);
+  box-shadow: 0 2px 20px oklch(19% 0.075 245 / 0.06);
 }
 .snav-inner { display: flex; align-items: center; gap: 24px; height: 72px }
 .slogo { display: flex; align-items: center; gap: 10px; flex-shrink: 0 }
@@ -48,35 +107,111 @@
   letter-spacing: -0.03em; color: var(--text);
 }
 .slogo-name strong { font-weight: 700 }
-.snav-links { display: flex; gap: 32px; margin-left: 16px }
-.snav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color 0.15s }
-.snav-links a:hover { color: var(--text) }
+.snav-links { display: flex; align-items: center; gap: 4px; margin-left: 16px }
+.snav-links > a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color 0.15s; padding: 8px 12px; border-radius: var(--rx) }
+.snav-links > a:hover { color: var(--text) }
 .snav-cta { margin-left: auto }
 .snav-toggle { display: none; color: var(--text); padding: 4px }
 
+/* ── Megamenu trigger ─────────────────────────────────────── */
+.snav-mega-wrap { position: relative }
+.snav-mega-btn {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  padding: 8px 12px; border-radius: var(--rx);
+  transition: color 0.15s, background 0.15s;
+  background: none; border: none; cursor: pointer; font-family: var(--font-body);
+}
+.snav-mega-btn:hover,
+.snav-mega-btn[aria-expanded="true"] { color: var(--text); background: var(--surface) }
+.snav-chevron { transition: transform .2s var(--ease-std); flex-shrink: 0 }
+.snav-mega-btn[aria-expanded="true"] .snav-chevron { transform: rotate(180deg) }
+
+/* ── Megamenu panel ───────────────────────────────────────── */
+.snav-mega {
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--rx-l);
+  box-shadow: 0 16px 48px oklch(19% 0.075 245 / 0.14), 0 2px 8px oklch(19% 0.075 245 / 0.06);
+  padding: 20px;
+  opacity: 0; pointer-events: none; visibility: hidden;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity .2s var(--ease-std), transform .2s var(--ease-std), visibility .2s;
+  min-width: 680px;
+  z-index: 200;
+}
+.snav-mega.open {
+  opacity: 1; pointer-events: auto; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.snav-mega-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 24px }
+.snav-mega-col { display: flex; flex-direction: column; gap: 2px }
+.snav-mega-head {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 6px 10px 8px; margin-bottom: 2px;
+}
+.snav-mega-head-ess { color: oklch(0.52 0.14 168) }
+.snav-mega-head-pro { color: oklch(0.45 0.18 250) }
+.snav-mega-head-suite { color: oklch(0.45 0.18 300) }
+.snav-mega-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 10px; border-radius: var(--rx); transition: background .15s;
+}
+.snav-mega-item:hover { background: var(--surface) }
+.snav-mega-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: var(--accent-sub); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); padding: 6px;
+}
+.snav-mega-icon svg { width: 100%; height: 100% }
+.snav-mega-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 1px }
+.snav-mega-desc { font-size: 11px; color: var(--muted); line-height: 1.4 }
+.snav-mega-all {
+  display: inline-block; margin-top: 8px; padding: 6px 10px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  border-radius: var(--rx); transition: background .15s;
+}
+.snav-mega-all:hover { background: var(--accent-sub) }
+
+/* ── Mobile ───────────────────────────────────────────────── */
 @media (max-width: 640px) {
   .snav-links { display: none }
   .snav-links.open {
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: column; align-items: stretch;
     position: fixed; top: 72px; left: 0; right: 0;
-    background: oklch(0.12 0.012 255 / 0.97);
+    background: oklch(99.5% 0.004 245 / 0.97);
     backdrop-filter: blur(20px);
-    padding: 24px; gap: 16px;
+    padding: 16px 24px 24px; gap: 4px;
     border-bottom: 1px solid var(--border-sub);
-    z-index: 99;
+    z-index: 99; max-height: calc(100dvh - 72px); overflow-y: auto;
   }
-  .snav-links.open a { font-size: 17px; color: var(--text) }
+  .snav-links.open > a { font-size: 16px; color: var(--text); padding: 10px 12px }
+  .snav-mega-btn { font-size: 16px; color: var(--text); padding: 10px 12px; width: 100%; justify-content: space-between }
+  .snav-mega {
+    position: static; transform: none; min-width: 0;
+    box-shadow: none; border: none; border-radius: 0;
+    padding: 0 0 0 16px; background: transparent;
+    opacity: 1; pointer-events: auto; visibility: visible;
+    display: none;
+  }
+  .snav-mega.open { display: block; transform: none }
+  .snav-mega-inner { grid-template-columns: 1fr; gap: 4px }
+  .snav-mega-col { gap: 0 }
   .snav-cta { display: none }
   .snav-toggle { display: flex }
 }
 </style>
 
 <script>
+  /* Scroll effect */
   const nav = document.getElementById('snav');
   window.addEventListener('scroll', () => {
     nav?.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
+  /* Mobile toggle */
   const toggle = document.getElementById('snav-toggle');
   const links  = document.getElementById('snav-links');
   toggle?.addEventListener('click', () => {
@@ -84,6 +219,48 @@
     toggle.setAttribute('aria-expanded', String(open));
   });
   links?.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => links.classList.remove('open'))
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    })
   );
+
+  /* Megamenu */
+  const megaBtn  = document.getElementById('snav-mega-btn');
+  const megaWrap = document.getElementById('snav-mega-wrap');
+  const megaPanel = document.getElementById('snav-mega');
+
+  function openMega() {
+    megaPanel?.classList.add('open');
+    megaBtn?.setAttribute('aria-expanded', 'true');
+  }
+  function closeMega() {
+    megaPanel?.classList.remove('open');
+    megaBtn?.setAttribute('aria-expanded', 'false');
+  }
+  function toggleMega() {
+    megaPanel?.classList.contains('open') ? closeMega() : openMega();
+  }
+
+  megaBtn?.addEventListener('click', (e) => { e.stopPropagation(); toggleMega(); });
+
+  /* Close on outside click */
+  document.addEventListener('click', (e) => {
+    if (!megaWrap?.contains(e.target as Node)) closeMega();
+  });
+
+  /* Close on Escape */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMega();
+  });
+
+  /* Desktop hover intent (cancel close if re-entering) */
+  let closeTimer: ReturnType<typeof setTimeout>;
+  megaWrap?.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    if (window.innerWidth > 640) openMega();
+  });
+  megaWrap?.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 640) closeTimer = setTimeout(closeMega, 120);
+  });
 </script>
