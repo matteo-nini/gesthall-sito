@@ -1,0 +1,100 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Cassa giornaliera per sale VLT e AWP · GestHall Suite"
+  description="Chiudi il cassetto ogni sera in 5 minuti. Turni mattino e sera, scassettamenti, bancomat, ticket: tutto calcolato in tempo reale senza errori."
+  tag="Cassa giornaliera"
+  heading="La cassa che si chiude da sola."
+  sub="Inserisci i dati del turno, GestHall Suite calcola cassetto e versamento in tempo reale. Turno mattino e sera separati, zero errori manuali."
+  plan="essenziale"
+  related={['scassettamenti', 'turni', 'firma-digitale']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="fmc-header">
+      <span class="fmc-title">Cassa · Turno 2 · 7 luglio 2026</span>
+      <span class="fmc-badge">Aperta</span>
+    </div>
+    <div class="fmc-body">
+      <div class="fmc-kpis">
+        <div class="fmc-kpi"><div class="fmc-kpi-l">Versamento</div><div class="fmc-kpi-v">€ 7.820</div></div>
+        <div class="fmc-kpi"><div class="fmc-kpi-l">Scassettamenti</div><div class="fmc-kpi-v">€ 12.460</div></div>
+      </div>
+      <div class="fmc-rows">
+        <div class="fmc-row"><span>Fondo cassa</span><span>€ 300,00</span></div>
+        <div class="fmc-row"><span>Scassettamenti totali</span><span>€ 12.460,00</span></div>
+        <div class="fmc-row"><span>Bancomat</span><span>€ 420,00</span></div>
+        <div class="fmc-row"><span>Ticket pagati</span><span>€ 220,00</span></div>
+        <div class="fmc-row"><span>Monete</span><span>€ 40,00</span></div>
+      </div>
+      <div class="fmc-result">
+        <span>Versamento netto</span>
+        <strong>€ 11.820,00</strong>
+      </div>
+    </div>
+    <div class="cg-status ok">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 7l3 3 7-6"/></svg>
+      Cassa in quadratura · scostamento €0,00
+    </div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">Apri il turno</div>
+      <div class="fp-step-desc">Ogni giornata ha due turni (mattino e sera). Il sistema li gestisce separatamente con operatore, fondo cassa e note distinte.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Inserisci i dati</div>
+      <div class="fp-step-desc">Contanti, scassettamenti macchina per macchina, bancomat, ticket pagati, refill AWP. Il calcolo avviene in tempo reale mentre scrivi.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Controlla la quadratura</div>
+      <div class="fp-step-desc">Il banner verde/giallo/rosso ti dice subito se la cassa è in quadratura. Soglia di €4 per turno; ogni scostamento viene segnalato immediatamente.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">4</div>
+      <div class="fp-step-title">Chiudi e invia</div>
+      <div class="fp-step-desc">Al salvataggio, l'email riepilogativa viene inviata automaticamente ai revisori configurati con importo, scassettamenti e ora di chiusura.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Zero calcoli manuali.</strong> Cassetto, versamento e scostamento sono sempre calcolati dal sistema, non dall'operatore.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Due turni separati per giornata.</strong> Mattino e sera hanno operatore, cassetto e note indipendenti. Il responsabile vede tutto in una schermata.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Email automatica ai revisori.</strong> Nessun messaggio manuale: alla chiusura, l'email con il riepilogo parte da sola.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Storico completo e immutabile.</strong> Ogni giornata rimane archivata con timestamp, operatore e tutti i valori inseriti.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Guida chiusura personalizzabile.</strong> Il responsabile può creare una checklist di chiusura in Markdown visibile a tutti gli operatori.</div>
+      </div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.cg-status {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 18px; font-size: 12px; font-weight: 600;
+  border-top: 1px solid var(--border-sub);
+}
+.cg-status.ok { color: oklch(0.45 0.18 155); background: oklch(96% 0.05 155) }
+</style>
