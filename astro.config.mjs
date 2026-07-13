@@ -5,4 +5,8 @@ export default defineConfig({
   site: 'https://gesthallsuite.it',
   integrations: [sitemap()],
   trailingSlash: 'ignore',
+  redirects: {
+    '/docs/guida':  '/docs/guida/index.html',
+    '/docs/guida/': '/docs/guida/index.html',
+  },
 });
