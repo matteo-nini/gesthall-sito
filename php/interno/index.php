@@ -643,6 +643,67 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
           </div>
         </div>
 
+        <!-- Nuova installazione su sottodominio -->
+        <div class="status-table-wrap" style="padding:20px 24px">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">5 · Attivazione nuovo cliente — sottodominio su SiteGround</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Procedura completa: da "cliente firma il contratto" a "suite operativa". Il cliente non ha bisogno di un proprio server — tutto gira su <code>nomesala.gesthallsuite.it</code>.</p>
+          <div class="proc">
+            <div class="proc-step">
+              <div class="proc-num">1</div>
+              <div class="proc-body">
+                <h4>Crea il sottodominio su SiteGround</h4>
+                <p>Panel SiteGround → Domains → Subdomains → aggiungi <code>nomesala.gesthallsuite.it</code>. Scegli o crea una cartella dedicata (es. <code>public_html/nomesala/</code>). Il wildcard SSL <code>*.gesthallsuite.it</code> deve essere attivo — se non lo è, attivarlo in Security → SSL/TLS prima di questo passo.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">2</div>
+              <div class="proc-body">
+                <h4>Copia la suite nella cartella</h4>
+                <p>Carica i file della suite (escludi <code>.env</code>, <code>config.php</code>, <code>uploads/</code> di altri clienti) nella cartella del sottodominio. Via File Manager SiteGround o SFTP.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">3</div>
+              <div class="proc-body">
+                <h4>Crea il database MySQL</h4>
+                <p>Panel SiteGround → MySQL Databases → crea un nuovo DB e utente dedicati al cliente. Poi importa lo schema:</p>
+                <code class="cmd">mysql -u utente -p nome_db &lt; install/schema.sql</code>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">4</div>
+              <div class="proc-body">
+                <h4>Configura <code>includes/config.php</code></h4>
+                <p>Copia <code>includes/config.example.php</code> → <code>includes/config.php</code> e imposta le credenziali DB, il nome sala e la base URL (<code>https://nomesala.gesthallsuite.it/</code>).</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">5</div>
+              <div class="proc-body">
+                <h4>Crea la scheda installazione nel hub</h4>
+                <p>Hub → Nuova installazione: inserisci nome sala, URL <code>https://nomesala.gesthallsuite.it/</code>, piano, scadenza. Il hub genera la <code>chiave</code> automaticamente.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">6</div>
+              <div class="proc-body">
+                <h4>Sincronizza le chiavi (segui la Procedura 2)</h4>
+                <p>Completa la Procedura 2 (Attivazione nuova installazione) per collegare la suite al hub: superadmin_key e installation_key devono coincidere in entrambi i sistemi.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">7</div>
+              <div class="proc-body">
+                <h4>Crea l'utente responsabile via ghost login</h4>
+                <p>Hub → installazione → Genera link ghost login → aprilo nella suite → vai su Impostazioni → Utenti → crea l'account del cliente. Poi comunicagli le credenziali.</p>
+              </div>
+            </div>
+          </div>
+          <div class="alert-box alert-green" style="margin-top:14px">
+            Il wildcard SSL <code>*.gesthallsuite.it</code> copre automaticamente ogni nuovo sottodominio. Non serve richiedere un certificato per ogni cliente.
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -651,8 +712,8 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
       <h2 class="section-title">Architettura</h2>
       <div class="card-grid">
         <div class="card card-accent">
-          <h3>App gestionale</h3>
-          <p>PHP 8+ / PDO / HTML CSS JS vanilla. Nessun framework. Multi-tenant: una installazione per sala. White-label via <code>impostazioni.brand_*</code>. PJAX navigation (piano Suite).</p>
+          <h3>App gestionale (suite)</h3>
+          <p>PHP 8+ / PDO / HTML CSS JS vanilla. Nessun framework. Una installazione per sala, ospitata su sottodominio GestHall (<code>nomesala.gesthallsuite.it</code>). White-label via <code>impostazioni.brand_*</code>. PJAX navigation (piano Suite).</p>
         </div>
         <div class="card card-accent">
           <h3>Hub (<code>hub.gesthallsuite.it</code>)</h3>
@@ -666,6 +727,22 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
           <h3>Sicurezza</h3>
           <p>CSRF token su ogni POST. Prepared statement su tutte le query. XSS: <code>htmlspecialchars()</code> sistematico. Push VAPID ECDH puro PHP 8.1+.</p>
         </div>
+      </div>
+
+      <h3 style="font-size:15px;font-weight:700;margin:24px 0 12px">Mappa sottodomini</h3>
+      <div class="proc-tab-wrap">
+        <table class="proc-tab">
+          <thead><tr><th>Sottodominio</th><th>Contenuto</th><th>Cartella su SiteGround</th></tr></thead>
+          <tbody>
+            <tr><td><code>gesthallsuite.it</code></td><td>Sito marketing (Astro build + PHP)</td><td><code>public_html/</code></td></tr>
+            <tr><td><code>hub.gesthallsuite.it</code></td><td>Hub — pannello admin/rivenditori</td><td><code>public_html/hub/</code> o directory separata del sottodominio</td></tr>
+            <tr><td><code>nomesala.gesthallsuite.it</code></td><td>Suite installazione cliente</td><td><code>public_html/nomesala/</code></td></tr>
+            <tr><td><code>*.gesthallsuite.it</code></td><td>Wildcard SSL Let's Encrypt</td><td>Copre tutti i sottodomini clienti automaticamente</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert-box alert-blue" style="margin-top:12px">
+        GestHall ospita tutte le installazioni — il cliente non ha bisogno di un proprio server. Su SiteGround: attivare il certificato wildcard <code>*.gesthallsuite.it</code> in Security → SSL/TLS; creare ogni sottodominio cliente in Domains → Subdomains.
       </div>
     </div>
 
