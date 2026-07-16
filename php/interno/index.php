@@ -707,6 +707,133 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
       </div>
     </div>
 
+    <!-- Migrazione dominio temporaneo → produzione -->
+    <div class="docs-section">
+      <h2 class="section-title">Migrazione dominio temporaneo → gesthallsuite.it</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Guida completa per passare da <code>matteon26.sg-host.com</code> ai domini definitivi senza perdere DB e dati. Tutti i file e il DB rimangono nelle stesse cartelle SiteGround — si aggiornano solo i puntamenti DNS e i <code>config.php</code>.</p>
+
+      <div class="status-table-wrap" style="padding:20px 24px;margin-bottom:16px">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px">Fase 1 — Configurazione DNS e SiteGround</h3>
+        <div class="proc">
+          <div class="proc-step">
+            <div class="proc-num">1</div>
+            <div class="proc-body">
+              <h4>Aggiungi gesthallsuite.it all'account SiteGround</h4>
+              <p>Site Tools → Domains → Add Domain → inserisci <code>gesthallsuite.it</code>. Come Document Root scegli la cartella che contiene il sito Astro già caricato (o lascia che SiteGround crei la cartella e poi sposti i file lì).</p>
+              <p style="margin-top:6px">Se il dominio è stato acquistato su SiteGround, i nameserver sono già configurati e la propagazione è quasi istantanea. Se è stato acquistato altrove, punta i nameserver a SiteGround (<code>ns1.siteground.net</code> / <code>ns2.siteground.net</code>) e aspetta fino a 24–48h.</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">2</div>
+            <div class="proc-body">
+              <h4>Crea i sottodomini</h4>
+              <p>Site Tools → Domains → Subdomains (o cPanel → Subdomains). Creali nell'ordine:</p>
+              <ul style="margin:8px 0 0 0;padding-left:18px;font-size:13px;line-height:1.8">
+                <li><code>hub.gesthallsuite.it</code> → Document root: cartella hub già esistente</li>
+                <li><code>gamespalace.gesthallsuite.it</code> → Document root: cartella suite già esistente (quella del dominio temp)</li>
+              </ul>
+              <p style="margin-top:8px">SiteGround crea i record DNS A automaticamente per ogni sottodominio aggiunto.</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">3</div>
+            <div class="proc-body">
+              <h4>Attiva SSL wildcard <code>*.gesthallsuite.it</code></h4>
+              <p>Security → SSL/TLS → Let's Encrypt → scegli il dominio <code>gesthallsuite.it</code> e seleziona l'opzione <strong>Wildcard</strong> (<code>*.gesthallsuite.it</code>). Questo copre hub, gamespalace e tutti i futuri sottodomini clienti in un unico certificato. Attivare solo dopo che il dominio principale ha propagato.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-table-wrap" style="padding:20px 24px;margin-bottom:16px">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px">Fase 2 — Aggiornamento configurazioni</h3>
+        <div class="proc">
+          <div class="proc-step">
+            <div class="proc-num">4</div>
+            <div class="proc-body">
+              <h4>Aggiorna <code>config.php</code> della suite (gamespalace)</h4>
+              <p>Nel file <code>suite/includes/config.php</code> cambia solo la <code>base_url</code>:</p>
+              <code class="cmd">'base_url' =&gt; 'https://gamespalace.gesthallsuite.it/'</code>
+              <p style="margin-top:8px">DB host, nome, utente e password rimangono identici — è lo stesso database di prima.</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">5</div>
+            <div class="proc-body">
+              <h4>Aggiorna <code>config.php</code> dell'hub</h4>
+              <p>Nel file <code>hub/includes/config.php</code>:</p>
+              <code class="cmd">'base_url' =&gt; 'https://hub.gesthallsuite.it/'</code>
+              <p style="margin-top:8px">Anche qui il DB è lo stesso, solo l'URL cambia.</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">6</div>
+            <div class="proc-body">
+              <h4>Aggiorna l'URL installazione nel hub</h4>
+              <p>Hub → scheda installazione Games Palace → modifica il campo URL da <code>https://matteon26.sg-host.com/</code> a <code>https://gamespalace.gesthallsuite.it/</code>. Questo aggiorna anche il target del ghost login.</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">7</div>
+            <div class="proc-body">
+              <h4>Aggiorna la superadmin_key nella suite (solo se cambia)</h4>
+              <p>Se la superadmin_key è già sincronizzata tra hub e suite, non serve fare nulla. Il ghost login e il portale cliente continueranno a funzionare — usano la chiave, non l'URL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-table-wrap" style="padding:20px 24px;margin-bottom:16px">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px">Fase 3 — Test prima della propagazione completa</h3>
+        <div class="proc">
+          <div class="proc-step">
+            <div class="proc-num">8</div>
+            <div class="proc-body">
+              <h4>Trova l'IP del server SiteGround</h4>
+              <p>cPanel → Server Information → nota il valore <em>Server IP Address</em> (o Site Tools → Site → cPanel → Server Information).</p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">9</div>
+            <div class="proc-body">
+              <h4>Modifica <code>/etc/hosts</code> sul tuo Mac</h4>
+              <p>Apri il file (richiede sudo) e aggiungi le righe:</p>
+              <code class="cmd">sudo nano /private/etc/hosts</code>
+              <p style="margin-top:8px">Aggiungi in fondo (sostituisci con l'IP reale):</p>
+              <pre style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px;font-size:12px;margin-top:6px;overflow-x:auto">1.2.3.4  gesthallsuite.it
+1.2.3.4  hub.gesthallsuite.it
+1.2.3.4  gamespalace.gesthallsuite.it</pre>
+              <p style="margin-top:6px">Salva con Ctrl+O → Enter → Ctrl+X. Svuota la cache DNS: <code class="cmd" style="display:inline;padding:2px 6px;font-size:11px">sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code></p>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">10</div>
+            <div class="proc-body">
+              <h4>Testa tutto sui nuovi domini</h4>
+              <p>Con <code>/etc/hosts</code> modificato il tuo Mac risolve subito i nuovi domini. Verifica:</p>
+              <ul style="margin:8px 0 0 0;padding-left:18px;font-size:13px;line-height:1.8">
+                <li><code>https://gamespalace.gesthallsuite.it/</code> → login suite, tutti i dati presenti</li>
+                <li><code>https://hub.gesthallsuite.it/</code> → login hub, installazioni visibili</li>
+                <li>Ghost login da hub → apre la suite sul nuovo dominio</li>
+                <li>SSL: lucchetto verde su tutti e tre i domini</li>
+              </ul>
+            </div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">11</div>
+            <div class="proc-body">
+              <h4>Rimuovi le righe da <code>/etc/hosts</code> dopo la propagazione</h4>
+              <p>Quando <code>gesthallsuite.it</code> è propagato pubblicamente, rimuovi le righe dal file hosts — altrimenti il tuo Mac ignorerebbe eventuali cambi DNS futuri.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-box alert-amber">
+        <strong>Il dominio temporaneo <code>sg-host.com</code></strong> può essere ignorato o eliminato dopo aver verificato che tutto funziona sui nuovi domini. Non è necessario fare redirect: nessun link esterno dovrebbe puntarci.
+      </div>
+    </div>
+
     <!-- Architettura -->
     <div class="docs-section">
       <h2 class="section-title">Architettura</h2>
