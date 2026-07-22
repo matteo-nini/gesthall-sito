@@ -19,23 +19,34 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fmc-cal">
       <div class="fmc-cal-day">
         <span class="fmc-cal-d">Lun 7</span>
-        <span class="fmc-op op-a">Marco R.</span>
-        <span class="fmc-op op-b">Silvia M.</span>
+        <div class="fmc-chip fmc-mine">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <span class="fmc-chip-op">Marco R.</span>
+        </div>
+        <div class="fmc-chip fmc-other">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div>
+          <span class="fmc-chip-op">Silvia M.</span>
+          <span class="fmc-chip-note">2h straordinario</span>
+        </div>
       </div>
       <div class="fmc-cal-day">
         <span class="fmc-cal-d">Mar 8</span>
-        <span class="fmc-op op-a">Marco R.</span>
-        <span class="fmc-op fmc-empty">—</span>
+        <div class="fmc-chip fmc-mine">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <span class="fmc-chip-op">Marco R.</span>
+        </div>
+        <div class="fmc-chip fmc-empty"><div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div></div>
       </div>
       <div class="fmc-cal-day">
         <span class="fmc-cal-d">Mer 9</span>
-        <span class="fmc-op op-c">Luigi F.</span>
-        <span class="fmc-op op-b">Silvia M.</span>
-      </div>
-      <div class="fmc-cal-day">
-        <span class="fmc-cal-d">Gio 10</span>
-        <span class="fmc-op op-c">Luigi F.</span>
-        <span class="fmc-op op-a">Marco R.</span>
+        <div class="fmc-chip fmc-other">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <span class="fmc-chip-op">Luigi F.</span>
+        </div>
+        <div class="fmc-chip fmc-other">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div>
+          <span class="fmc-chip-op">Silvia M.</span>
+        </div>
       </div>
     </div>
     <div class="turni-consegna">
@@ -92,6 +103,10 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Note turno direttamente sulla chip.</strong> Ogni turno può avere una nota testuale (ore di straordinario, annotazioni operative) aggiungibile dal pannello giornata. La nota compare in corsivo sulla chip del calendario, visibile a colpo d'occhio senza aprire nulla.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
         <div class="fp-benefit-text"><strong>Accesso revisore in sola lettura.</strong> Il responsabile può abilitare i revisori a vedere il calendario in sola lettura senza poter modificare nulla.</div>
       </div>
     </div>
@@ -100,6 +115,22 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 </FeatureLayout>
 
 <style>
+/* Calendar chips mock */
+.fmc-cal { display: flex; gap: 6px; padding: 12px 14px }
+.fmc-cal-day { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0 }
+.fmc-cal-d { font-size: 10px; font-weight: 700; color: var(--faint); margin-bottom: 2px; display: block }
+.fmc-chip { border-radius: 5px; padding: 3px 5px 4px; overflow: hidden; display: flex; flex-direction: column; gap: 0 }
+.fmc-chip-head { display: flex; align-items: center; justify-content: space-between; gap: 2px; overflow: hidden }
+.fmc-chip-lbl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .2px; opacity: .58; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; min-width: 0 }
+.fmc-chip-time { font-size: 7.5px; font-weight: 600; white-space: nowrap; flex-shrink: 0; opacity: .48; font-variant-numeric: tabular-nums }
+.fmc-chip-op { font-size: 11px; font-weight: 800; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.2; margin-top: 2px }
+.fmc-chip-note { font-size: 7.5px; opacity: .58; font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 1px }
+.fmc-mine { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); color: var(--accent-ink); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 55%, transparent) }
+.fmc-other { background: var(--surface2); color: var(--muted); box-shadow: inset 0 0 0 1px var(--border) }
+.fmc-other .fmc-chip-op { color: var(--ink) }
+.fmc-empty { background: transparent; border: 1px dashed var(--border) }
+
+/* Handover section */
 .turni-consegna { padding: 14px 18px; border-top: 1px solid var(--border-sub) }
 .tc-label { font-size: 10px; font-weight: 700; color: var(--faint); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px }
 .tc-checklist { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px }
