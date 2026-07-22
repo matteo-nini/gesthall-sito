@@ -16,6 +16,29 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="cl-feed">
 
+      <!-- 2.13.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.13.0</span>
+          <time class="cl-date" datetime="2026-07-22">22 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li><strong>LUL — Buste paga digitali</strong> — Il revisore carica il PDF del Libro Unico del Lavoro: l'app riconosce automaticamente i codici fiscali, abbina ciascuno all'operatore corrispondente e invia le buste paga individuali via email. Ogni operatore trova le proprie buste nella sezione dedicata con badge di notifica. L'apertura di una busta registra la presa visione con data, ora e IP per conformità normativa.</li>
+              <li><strong>Codice fiscale operatore</strong> — Campo CF aggiunto ai profili utente, editabile da Admin → Utenti. Usato dall'abbinamento automatico LUL.</li>
+            </ul>
+          </div>
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-change">Migliorato</span>
+            <ul class="cl-list">
+              <li><strong>Calendario turni fullscreen</strong> — Le viste Mese, Settimana e Agenda occupano ora tutta l'altezza disponibile senza scrolling esterno.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- 2.12.0 -->
       <div class="cl-entry">
         <div class="cl-entry-head">
@@ -240,8 +263,9 @@ import Layout from '../layouts/Layout.astro';
   text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 5px;
   width: fit-content
 }
-.cl-badge-add { background: var(--accent-sub); color: var(--accent-dim); border: 1px solid oklch(0.72 0.16 168 / 0.22) }
-.cl-badge-fix { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border-sub) }
+.cl-badge-add    { background: var(--accent-sub); color: var(--accent-dim); border: 1px solid oklch(0.72 0.16 168 / 0.22) }
+.cl-badge-change { background: oklch(0.96 0.018 250); color: oklch(0.45 0.14 250); border: 1px solid oklch(0.82 0.06 250) }
+.cl-badge-fix    { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border-sub) }
 
 .cl-list { display: flex; flex-direction: column; gap: 8px; padding-left: 2px }
 .cl-list li {
