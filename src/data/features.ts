@@ -75,6 +75,14 @@ export const features: Feature[] = [
     icon: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="6" r="3"/><path d="M2 18c0-3.3 2.7-6 6-6M13 14l2 2 4-4"/></svg>`,
   },
   {
+    id: 'lul-buste-paga',
+    slug: '/funzionalita/lul-buste-paga',
+    name: 'LUL e buste paga',
+    desc: 'Distribuzione digitale delle buste paga con presa visione tracciata',
+    plan: 'pro',
+    icon: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><polyline points="12 2 12 7 17 7"/><line x1="13" y1="11" x2="7" y2="11"/><line x1="13" y1="14" x2="7" y2="14"/></svg>`,
+  },
+  {
     id: 'chat-operatori',
     slug: '/funzionalita/chat-operatori',
     name: 'Chat interna',
